@@ -222,10 +222,10 @@ export default function CoCoKartePage() {
 
         <div id="pricing">
           <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
-            <h2 className="text-xl font-semibold">料金プラン</h2>
+            <h2 className="text-xl font-semibold">価格について</h2>
             <div className="mt-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-6">
               <p className="text-xs uppercase tracking-[0.24em] text-[var(--brand)]">
-                DX エンタープライズプラン
+                基本プラン（目安）
               </p>
               <div className="mt-4 grid gap-4 md:grid-cols-2">
                 <div>
@@ -247,8 +247,8 @@ export default function CoCoKartePage() {
                 </div>
               </div>
               <p className="mt-4 text-xs text-[var(--ink-muted)]">
-                IT導入補助金2026の活用相談に対応予定です。補助率・対象経費・
-                採択可否は制度要件および審査結果により変動します。
+                機能追加・外部連携・拠点数・ユーザー数・データ移行量などに応じて
+                費用は変動します。個別要件に合わせてお見積りします。
               </p>
             </div>
           </Reveal>
@@ -301,7 +301,7 @@ export default function CoCoKartePage() {
                 まずはデモ・ご相談から
               </h2>
               <p className="mt-2 text-sm text-[rgba(255,255,255,0.75)]">
-                現場フローや補助金のご相談まで、導入から運用まで伴走します。
+                現場フローや個別要件のご相談まで、導入から運用まで伴走します。
               </p>
             </div>
             <Link

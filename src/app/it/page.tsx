@@ -164,9 +164,6 @@ export default function ItPage() {
             <p className="mt-4 text-sm text-[var(--ink-muted)]">
               予約・問診・カルテ・顧客フォローを一元化し、現場の負担を抑えた運用を支援します。
             </p>
-            <div className="mt-4 text-xs text-[var(--ink-muted)]">
-              IT導入補助金に関するご相談も個別に承ります。
-            </div>
             <a
               href="/products/cocokarte"
               className="mt-6 inline-flex rounded-full border border-[rgba(11,33,66,0.2)] px-5 py-2 text-xs font-semibold text-[var(--ink)] transition hover:border-[var(--brand)] hover:text-[var(--brand)]"
