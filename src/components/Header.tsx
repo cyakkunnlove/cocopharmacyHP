@@ -10,6 +10,7 @@ const navItems = [
   { label: "事業紹介", href: "/services" },
   { label: "在宅医療", href: "/homecare" },
   { label: "医療IT", href: "/it" },
+  { label: "製品紹介", href: "/products/cocokarte" },
   { label: "お知らせ", href: "/news" },
   { label: "採用", href: "/recruit" },
   { label: "FAQ", href: "/faq" },

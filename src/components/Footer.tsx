@@ -26,6 +26,12 @@ export default function Footer() {
           <Link href="/it" className="hover:text-[var(--brand)]">
             医療IT
           </Link>
+          <Link
+            href="/products/cocokarte"
+            className="hover:text-[var(--brand)]"
+          >
+            製品紹介
+          </Link>
           <Link href="/company" className="hover:text-[var(--brand)]">
             会社情報
           </Link>

@@ -31,9 +31,15 @@ const services = [
     title: "医療IT事業",
     tagline: "現場課題に即したIT実装支援",
     description:
-      "医療現場の業務効率化と価値向上を目的に、実装まで支援します。",
+      "医療現場の業務効率化と価値向上を目的に、実装とプロダクト導入を支援します。",
     image: "/legacy/it-dashboard.png",
-    items: ["Webアプリ開発", "業務効率化", "サイト制作", "DX/AI連携"],
+    items: [
+      "Webアプリ開発",
+      "業務効率化",
+      "サイト制作",
+      "DX/AI連携",
+      "製品・SaaS提供",
+    ],
   },
 ];
 
@@ -88,7 +94,7 @@ const serviceHighlights = [
   },
   {
     title: "支援範囲",
-    detail: "調剤 / 在宅 / 医療IT / DX",
+    detail: "調剤 / 在宅 / 医療IT / DX / プロダクト",
   },
   {
     title: "体制",

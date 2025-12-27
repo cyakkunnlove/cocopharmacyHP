@@ -36,7 +36,8 @@ const focusAreas = [
   },
   {
     title: "医療IT事業",
-    detail: "医療向けWebアプリ/業務効率化/サイト制作/DX/AI連携。",
+    detail:
+      "医療向けWebアプリ/業務効率化/サイト制作/DX/AI連携/プロダクト提供。",
   },
 ];
 
@@ -239,7 +240,7 @@ export default function Home() {
               },
               {
                 title: "支援領域",
-                detail: "在宅医療 / 調剤 / 医療IT / DX / AI連携",
+                detail: "在宅医療 / 調剤 / 医療IT / DX / AI連携 / プロダクト",
               },
             ].map((item) => (
               <div key={item.title} className="rounded-2xl bg-[var(--mist)] p-5">

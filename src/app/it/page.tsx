@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "医療IT支援",
   description:
-    "医療機関・メーカー・自治体向けの医療IT支援サービスをご紹介します。",
+    "医療機関・メーカー・自治体向けの医療IT支援と自社プロダクトをご紹介します。",
 };
 
 const capabilities = [
@@ -30,6 +30,10 @@ const capabilities = [
   {
     title: "AI連携",
     description: "AI活用を前提とした業務改善や自動化を支援します。",
+  },
+  {
+    title: "プロダクト提供",
+    description: "現場課題に合わせた自社プロダクトの導入・運用を支援。",
   },
   {
     title: "運用設計",
@@ -123,7 +127,7 @@ export default function ItPage() {
             </h1>
             <p className="mt-4 max-w-2xl text-sm text-[var(--ink-muted)]">
               医療機関・メーカー・自治体向けに、現場視点のIT支援を提供します。
-              医療とITの両方を理解した実装型支援で、現場の課題解決を行います。
+              医療とITの両方を理解した実装型支援に加え、プロダクト導入も支援します。
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-xs text-[var(--ink-muted)]">
               <span className="rounded-full border border-[rgba(11,33,66,0.15)] px-3 py-1">
@@ -141,6 +145,39 @@ export default function ItPage() {
             <Image
               src="/legacy/it-hero.png"
               alt="医療IT支援のイメージ"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+        </Reveal>
+
+        <Reveal className="mt-10 grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
+              Product
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold">CoCoKarte</h2>
+            <p className="mt-2 text-sm font-semibold text-[var(--brand)]">
+              LINE連携型 予約・カルテ一元管理システム
+            </p>
+            <p className="mt-4 text-sm text-[var(--ink-muted)]">
+              予約・問診・カルテ・顧客フォローを一元化し、現場の負担を抑えた運用を支援します。
+            </p>
+            <div className="mt-4 text-xs text-[var(--ink-muted)]">
+              IT導入補助金に関するご相談も個別に承ります。
+            </div>
+            <a
+              href="/products/cocokarte"
+              className="mt-6 inline-flex rounded-full border border-[rgba(11,33,66,0.2)] px-5 py-2 text-xs font-semibold text-[var(--ink)] transition hover:border-[var(--brand)] hover:text-[var(--brand)]"
+            >
+              製品ページを見る
+            </a>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
+            <Image
+              src="/legacy/it-dashboard.png"
+              alt="CoCoKarteの画面イメージ"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"

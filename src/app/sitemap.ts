@@ -10,6 +10,7 @@ export default function sitemap() {
     "/services",
     "/homecare",
     "/it",
+    "/products/cocokarte",
     "/news",
     "/contact",
     "/recruit",
