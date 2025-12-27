@@ -27,6 +27,10 @@ export default function ContactForm({
 }: ContactFormProps) {
   const [state, setState] = useState<FormState>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const successMessage =
+    category === "it"
+      ? "送信ありがとうございました。担当より折り返しご連絡いたします。デモ環境のURLとログイン情報は個別にご案内します。"
+      : "送信ありがとうございました。担当より折り返しご連絡いたします。";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -126,7 +130,7 @@ export default function ContactForm({
 
         {state === "success" && (
           <p className="text-sm text-[var(--brand-dark)]">
-            送信ありがとうございました。担当より折り返しご連絡いたします。
+            {successMessage}
           </p>
         )}
 

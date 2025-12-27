@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     "LINE連携型 予約・カルテ一元管理システム「CoCoKarte（ココカルテ）」のご紹介。",
 };
 
+const demoUrl =
+  process.env.NEXT_PUBLIC_COCOKARTE_DEMO_URL ?? "/contact";
+const isExternalDemo = demoUrl.startsWith("http");
+
 const challenges = [
   {
     title: "電話・受付対応で現場が止まる",
@@ -138,7 +142,9 @@ export default function CoCoKartePage() {
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href={demoUrl}
+                target={isExternalDemo ? "_blank" : undefined}
+                rel={isExternalDemo ? "noopener noreferrer" : undefined}
                 className="rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[rgba(27,141,138,0.25)] transition hover:bg-[var(--brand-dark)]"
               >
                 デモ・ご相談はこちら
