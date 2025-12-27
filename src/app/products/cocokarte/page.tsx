@@ -43,22 +43,30 @@ const strengths = [
   {
     title: "医療現場視点のデジタルカルテ",
     detail:
-      "診療記録・施術写真・同意書などを時系列で一元管理。",
+      "診療記録・同意書・メモなどを時系列で一元管理。",
   },
   {
-    title: "CRM・分析で経営判断を支援",
+    title: "CRM・運用管理で現場を支援",
     detail:
-      "再来店促進や稼働率など、現場の判断材料を可視化。",
+      "顧客情報と運用データをまとめ、判断材料を可視化。",
   },
 ];
 
-const coreFunctions = [
-  "LINE連携予約・変更・キャンセル",
-  "問診・同意書の事前回収",
-  "カルテ・写真・添付ファイル管理",
-  "スタッフ/拠点ごとの権限管理",
-  "リマインド配信・タグ配信",
-  "売上/稼働率/来店分析ダッシュボード",
+const standardFeatures = [
+  "24時間Web予約（カレンダー表示 / 空き枠自動計算 / 予約確定・キャンセル）",
+  "Web問診票（アレルギー・既往歴などの事前入力）",
+  "顧客管理データベース（基本情報・来店履歴・管理メモ）",
+  "会員ランク・ポイント（付与・履歴管理）",
+  "メニュー・コース管理（所要時間・価格設定）",
+  "管理者ダッシュボード（予約/顧客一覧の閲覧・編集権限）",
+];
+
+const optionalFeatures = [
+  "LINE公式アカウント高度連携（リッチメニュー/セグメント/ステップ配信）",
+  "電子署名（同意書などのタブレット署名）",
+  "画像保存・管理（施術写真などのアップロード）",
+  "多店舗管理・権限の切り分け",
+  "データ移行（既存データの移管）",
 ];
 
 const industries = [
@@ -195,15 +203,38 @@ export default function CoCoKartePage() {
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
-            <h2 className="text-xl font-semibold">主な機能</h2>
-            <ul className="mt-6 grid gap-3 text-sm text-[var(--ink-muted)] md:grid-cols-2">
-              {coreFunctions.map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <h2 className="text-xl font-semibold">機能一覧</h2>
+            <div className="mt-6 grid gap-4">
+              <div className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4">
+                <p className="text-xs font-semibold text-[var(--brand)]">
+                  標準対応
+                </p>
+                <ul className="mt-3 space-y-2 text-sm text-[var(--ink-muted)]">
+                  {standardFeatures.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--sand)] p-4">
+                <p className="text-xs font-semibold text-[var(--brand)]">
+                  オプション/個別対応
+                </p>
+                <ul className="mt-3 space-y-2 text-sm text-[var(--ink-muted)]">
+                  {optionalFeatures.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-xs text-[var(--ink-muted)]">
+                  要件に合わせて構築・設定します。詳細はご相談ください。
+                </p>
+              </div>
+            </div>
           </Reveal>
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">想定業種</h2>
