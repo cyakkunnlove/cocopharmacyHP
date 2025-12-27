@@ -114,8 +114,8 @@ export default function CoCoKartePage() {
             </p>
             <p className="mt-4 max-w-2xl text-sm text-[var(--ink-muted)]">
               株式会社メディカル東京が薬局運営で培った現場改善の知見を凝縮。
-              予約管理、問診、カルテ管理、顧客フォローまでを一元化し、
-              対人サービスの現場に合った運用をスマホ中心で支援します。
+              予約管理、問診、カルテ、顧客フォローまでを一元化し、
+              現場運用をスマホ中心に整えます。
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-xs text-[var(--ink-muted)]">
               <span className="rounded-full border border-[rgba(11,33,66,0.15)] px-3 py-1">
@@ -225,12 +225,13 @@ export default function CoCoKartePage() {
             <h2 className="text-xl font-semibold">価格について</h2>
             <div className="mt-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-6">
               <p className="text-xs uppercase tracking-[0.24em] text-[var(--brand)]">
-                基本プラン（目安）
+                基本プラン（標準価格）
               </p>
               <div className="mt-4 grid gap-4 md:grid-cols-2">
                 <div>
                   <p className="text-sm font-semibold text-[var(--ink)]">
-                    初期導入費：1,200,000円（税別）
+                    初期導入費：1,200,000円（税別） ※IT導入補助金 対象ツール（予定）。
+                    補助金を活用することで、実質負担額を大幅に抑えて導入可能です。
                   </p>
                   <p className="mt-2 text-sm text-[var(--ink-muted)]">
                     システム構築・LINE公式アカウント開設支援・
@@ -247,8 +248,8 @@ export default function CoCoKartePage() {
                 </div>
               </div>
               <p className="mt-4 text-xs text-[var(--ink-muted)]">
-                機能追加・外部連携・拠点数・ユーザー数・データ移行量などに応じて
-                費用は変動します。個別要件に合わせてお見積りします。
+                機能追加、外部連携、拠点数、ユーザー数、移行量、運用体制により
+                費用は変動します。要件確認のうえ個別にお見積りします。
               </p>
             </div>
           </Reveal>
@@ -286,6 +287,20 @@ export default function CoCoKartePage() {
               </li>
             ))}
           </ul>
+          <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4 sm:flex-row sm:items-center">
+            <div className="relative h-12 w-40 overflow-hidden">
+              <Image
+                src="/security-action-one-star.png"
+                alt="SECURITY ACTION 一つ星"
+                fill
+                className="object-contain"
+                sizes="160px"
+              />
+            </div>
+            <p className="text-xs text-[var(--ink-muted)]">
+              ※IPA（独立行政法人情報処理推進機構）の「SECURITY ACTION」一つ星を宣言しています。
+            </p>
+          </div>
           <div className="mt-6 rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4 text-xs text-[var(--ink-muted)]">
             詳細なセキュリティ仕様や運用ルールは個別にご案内します。
           </div>

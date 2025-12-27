@@ -162,7 +162,7 @@ export default function ItPage() {
               LINE連携型 予約・カルテ一元管理システム
             </p>
             <p className="mt-4 text-sm text-[var(--ink-muted)]">
-              予約・問診・カルテ・顧客フォローを一元化し、現場の負担を抑えた運用を支援します。
+              予約・問診・カルテ・顧客フォローを一元化し、現場負担を抑えた運用設計を支援します。
             </p>
             <a
               href="/products/cocokarte"
