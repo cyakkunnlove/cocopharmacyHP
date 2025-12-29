@@ -16,8 +16,12 @@ const capabilities = [
     description: "医療現場の課題に合わせた業務アプリを設計・実装します。",
   },
   {
+    title: "業務フロー可視化・要件定義",
+    description: "現場の流れを整理し、改善ポイントと要件を明確化します。",
+  },
+  {
     title: "業務効率化支援",
-    description: "業務フローを可視化し、改善提案から実装まで支援します。",
+    description: "改善提案から自動化・実装まで一貫して支援します。",
   },
   {
     title: "サイト制作",
@@ -32,12 +36,49 @@ const capabilities = [
     description: "AI活用を前提とした業務改善や自動化を支援します。",
   },
   {
+    title: "外部連携支援",
+    description: "LINE/予約/決済/会計/電子署名などの連携を設計します。",
+  },
+  {
     title: "プロダクト提供",
     description: "現場課題に合わせた自社プロダクトの導入・運用を支援。",
   },
   {
-    title: "運用設計",
-    description: "導入後の運用設計や現場フォローを重視します。",
+    title: "導入・定着支援",
+    description: "運用設計・研修・マニュアル整備まで支援します。",
+  },
+];
+
+const productRoadmap = [
+  {
+    title: "CoCoSurvey",
+    description:
+      "事前問診フォーム・同意管理・PDF保管までを一括で整理。",
+  },
+  {
+    title: "CoCoFollow",
+    description:
+      "再来店・再診フォローの自動化で継続率を高めます。",
+  },
+  {
+    title: "CoCoVisit",
+    description:
+      "訪問スケジュールとルート最適化で移動時間を削減。",
+  },
+  {
+    title: "CoCoDesk",
+    description:
+      "受付・電話・チャット対応の記録を集約し引継ぎを効率化。",
+  },
+  {
+    title: "CoCoInsight",
+    description:
+      "予約・売上・稼働の指標を統合し意思決定を支援。",
+  },
+  {
+    title: "CoCoDocs",
+    description:
+      "同意書・契約書・記録の保管と検索を一本化。",
   },
 ];
 
@@ -216,6 +257,38 @@ export default function ItPage() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
+                Product Roadmap
+              </p>
+              <h2 className="mt-2 text-xl font-semibold">開発中プロダクト構想</h2>
+              <p className="mt-2 text-sm text-[var(--ink-muted)]">
+                CoCoKarteを中心に、周辺業務を支えるツールを順次開発予定です。
+              </p>
+            </div>
+            <span className="rounded-full border border-[rgba(11,33,66,0.15)] bg-[var(--mist)] px-3 py-1 text-[11px] font-semibold text-[var(--ink)]">
+              構想・準備中
+            </span>
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {productRoadmap.map((product) => (
+              <div
+                key={product.title}
+                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
+              >
+                <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand)]">
+                  {product.title}
+                </p>
+                <p className="mt-2 text-sm text-[var(--ink-muted)]">
+                  {product.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
