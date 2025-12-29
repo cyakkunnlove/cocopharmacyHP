@@ -10,6 +10,10 @@ export const metadata: Metadata = {
     "医療機関・メーカー・自治体向けの医療IT支援と自社プロダクトをご紹介します。",
 };
 
+const demoUrl =
+  process.env.NEXT_PUBLIC_COCOKARTE_DEMO_URL ?? "/products/cocokarte";
+const isExternalDemo = demoUrl.startsWith("http");
+
 const capabilities = [
   {
     title: "Webアプリ開発",
@@ -164,12 +168,22 @@ export default function ItPage() {
             <p className="mt-4 text-sm text-[var(--ink-muted)]">
               予約・問診・カルテ・顧客フォローを一元化し、現場負担を抑えた運用設計を支援します。
             </p>
-            <a
-              href="/products/cocokarte"
-              className="mt-6 inline-flex rounded-full border border-[rgba(11,33,66,0.2)] px-5 py-2 text-xs font-semibold text-[var(--ink)] transition hover:border-[var(--brand)] hover:text-[var(--brand)]"
-            >
-              製品ページを見る
-            </a>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/products/cocokarte"
+                className="inline-flex rounded-full border border-[rgba(11,33,66,0.2)] px-5 py-2 text-xs font-semibold text-[var(--ink)] transition hover:border-[var(--brand)] hover:text-[var(--brand)]"
+              >
+                製品ページを見る
+              </a>
+              <a
+                href={demoUrl}
+                target={isExternalDemo ? "_blank" : undefined}
+                rel={isExternalDemo ? "noopener noreferrer" : undefined}
+                className="inline-flex rounded-full bg-[var(--brand)] px-5 py-2 text-xs font-semibold text-white transition hover:bg-[var(--brand-dark)]"
+              >
+                CoCoKarte デモを見る
+              </a>
+            </div>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
