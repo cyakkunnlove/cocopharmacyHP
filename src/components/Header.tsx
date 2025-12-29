@@ -9,17 +9,20 @@ const demoUrl =
   "https://cocokarte-demo.vercel.app/";
 const isExternalDemo = demoUrl.startsWith("http");
 
-const navItems = [
+const navItemsPrimary = [
   { label: "トップ", href: "/" },
   { label: "会社情報", href: "/company" },
   { label: "事業紹介", href: "/services" },
-  { label: "在宅医療", href: "/homecare" },
   { label: "医療IT", href: "/it" },
   { label: "製品紹介", href: "/products/cocokarte" },
+  { label: "お問い合わせ", href: "/contact" },
+];
+
+const navItemsSecondary = [
+  { label: "在宅医療", href: "/homecare" },
   { label: "お知らせ", href: "/news" },
   { label: "採用", href: "/recruit" },
   { label: "FAQ", href: "/faq" },
-  { label: "お問い合わせ", href: "/contact" },
 ];
 
 export default function Header() {
@@ -55,16 +58,32 @@ export default function Header() {
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-6 text-sm lg:flex">
-            {navItems.map((item) => (
+          <nav className="hidden items-center gap-4 text-xs lg:flex">
+            {navItemsPrimary.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="transition hover:text-[var(--brand)]"
+                className="whitespace-nowrap transition hover:text-[var(--brand)]"
               >
                 {item.label}
               </Link>
             ))}
+            <details className="relative">
+              <summary className="list-none cursor-pointer whitespace-nowrap rounded-full border border-[rgba(11,33,66,0.15)] px-3 py-1 text-[11px] font-semibold text-[var(--ink)] transition hover:border-[var(--brand)] hover:text-[var(--brand)]">
+                その他
+              </summary>
+              <div className="absolute right-0 mt-2 w-44 rounded-2xl border border-[rgba(11,33,66,0.12)] bg-white p-2 shadow-lg">
+                {navItemsSecondary.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-lg px-3 py-2 text-xs text-[var(--ink)] transition hover:bg-[var(--mist)]"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
           </nav>
 
           <Link
@@ -98,7 +117,7 @@ export default function Header() {
             >
               CoCoKarte デモを見る
             </Link>
-            {navItems.map((item) => (
+            {[...navItemsPrimary, ...navItemsSecondary].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
