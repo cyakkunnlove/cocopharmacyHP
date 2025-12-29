@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 };
 
 const demoUrl =
-  process.env.NEXT_PUBLIC_COCOKARTE_DEMO_URL ?? "/contact";
+  process.env.NEXT_PUBLIC_COCOKARTE_DEMO_URL ??
+  "https://cocokarte-demo.vercel.app/";
 const isExternalDemo = demoUrl.startsWith("http");
 
 const challenges = [

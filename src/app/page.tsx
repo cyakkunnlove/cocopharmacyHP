@@ -7,6 +7,11 @@ import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import ParallaxController from "@/components/ParallaxController";
 
+const demoUrl =
+  process.env.NEXT_PUBLIC_COCOKARTE_DEMO_URL ??
+  "https://cocokarte-demo.vercel.app/";
+const isExternalDemo = demoUrl.startsWith("http");
+
 const headlineCards = [
   {
     title: "在宅医療を核にした広域連携",
@@ -145,6 +150,14 @@ export default function Home() {
                   className="pulse-ring rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[rgba(27,141,138,0.25)] transition hover:bg-[var(--brand-dark)]"
                 >
                   ご相談・お問い合わせ
+                </Link>
+                <Link
+                  href={demoUrl}
+                  target={isExternalDemo ? "_blank" : undefined}
+                  rel={isExternalDemo ? "noopener noreferrer" : undefined}
+                  className="rounded-full border border-[rgba(11,33,66,0.2)] bg-white px-6 py-3 text-sm font-semibold text-[var(--brand)] transition hover:border-[var(--brand)] hover:text-[var(--brand-dark)]"
+                >
+                  CoCoKarte デモを見る
                 </Link>
                 <Link
                   href="/services"

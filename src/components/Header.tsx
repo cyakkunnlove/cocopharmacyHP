@@ -4,6 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const demoUrl =
+  process.env.NEXT_PUBLIC_COCOKARTE_DEMO_URL ??
+  "https://cocokarte-demo.vercel.app/";
+const isExternalDemo = demoUrl.startsWith("http");
+
 const navItems = [
   { label: "トップ", href: "/" },
   { label: "会社情報", href: "/company" },
@@ -62,6 +67,15 @@ export default function Header() {
             ))}
           </nav>
 
+          <Link
+            href={demoUrl}
+            target={isExternalDemo ? "_blank" : undefined}
+            rel={isExternalDemo ? "noopener noreferrer" : undefined}
+            className="hidden rounded-full bg-[var(--brand)] px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-[var(--brand-dark)] lg:inline-flex"
+          >
+            CoCoKarte デモ
+          </Link>
+
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
@@ -75,6 +89,15 @@ export default function Header() {
       {open && (
         <div className="border-t border-[rgba(11,33,66,0.08)] bg-white lg:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col px-6 py-4 text-sm">
+            <Link
+              href={demoUrl}
+              target={isExternalDemo ? "_blank" : undefined}
+              rel={isExternalDemo ? "noopener noreferrer" : undefined}
+              onClick={() => setOpen(false)}
+              className="mb-3 inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-4 py-2 text-xs font-semibold text-white"
+            >
+              CoCoKarte デモを見る
+            </Link>
             {navItems.map((item) => (
               <Link
                 key={item.href}
