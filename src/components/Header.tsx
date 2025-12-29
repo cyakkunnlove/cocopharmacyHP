@@ -58,7 +58,7 @@ export default function Header() {
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-4 text-xs lg:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-5 text-sm lg:flex">
             {navItemsPrimary.map((item) => (
               <Link
                 key={item.href}
@@ -69,7 +69,7 @@ export default function Header() {
               </Link>
             ))}
             <details className="relative">
-              <summary className="list-none cursor-pointer whitespace-nowrap rounded-full border border-[rgba(11,33,66,0.15)] px-3 py-1 text-[11px] font-semibold text-[var(--ink)] transition hover:border-[var(--brand)] hover:text-[var(--brand)]">
+              <summary className="list-none cursor-pointer whitespace-nowrap rounded-full border border-[rgba(11,33,66,0.15)] px-4 py-1.5 text-sm font-semibold text-[var(--ink)] transition hover:border-[var(--brand)] hover:text-[var(--brand)]">
                 その他
               </summary>
               <div className="absolute right-0 mt-2 w-44 rounded-2xl border border-[rgba(11,33,66,0.12)] bg-white p-2 shadow-lg">
@@ -77,7 +77,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block rounded-lg px-3 py-2 text-xs text-[var(--ink)] transition hover:bg-[var(--mist)]"
+                    className="block rounded-lg px-3 py-2 text-sm text-[var(--ink)] transition hover:bg-[var(--mist)]"
                   >
                     {item.label}
                   </Link>
@@ -90,7 +90,7 @@ export default function Header() {
             href={demoUrl}
             target={isExternalDemo ? "_blank" : undefined}
             rel={isExternalDemo ? "noopener noreferrer" : undefined}
-            className="hidden rounded-full bg-[var(--brand)] px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-[var(--brand-dark)] lg:inline-flex"
+            className="hidden rounded-full bg-[var(--brand)] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--brand-dark)] lg:inline-flex"
           >
             CoCoKarte デモ
           </Link>
