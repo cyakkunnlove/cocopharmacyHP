@@ -27,6 +27,7 @@ export default function ContactForm({
 }: ContactFormProps) {
   const [state, setState] = useState<FormState>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [startedAt] = useState(() => Date.now().toString());
   const successMessage =
     category === "it"
       ? "送信ありがとうございました。担当より折り返しご連絡いたします。デモ環境のURLとログイン情報は個別にご案内します。"
@@ -37,7 +38,8 @@ export default function ContactForm({
     setState("loading");
     setErrorMessage("");
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
     try {
@@ -58,7 +60,7 @@ export default function ContactForm({
       }
 
       setState("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "送信に失敗しました。";
@@ -83,6 +85,13 @@ export default function ContactForm({
       </div>
 
       <div className="grid gap-4">
+        <div className="hidden">
+          <label className="grid gap-2 text-sm font-medium text-[var(--ink)]">
+            会社Webサイト
+            <input name="website" tabIndex={-1} autoComplete="off" />
+          </label>
+        </div>
+        <input type="hidden" name="startedAt" value={startedAt} />
         <label className="grid gap-2 text-sm font-medium text-[var(--ink)]">
           お名前
           <input name="name" required className={inputBase} />

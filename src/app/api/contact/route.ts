@@ -44,6 +44,16 @@ export async function POST(request: Request) {
   const organization = truncate(sanitize(body?.organization));
   const preferred = truncate(sanitize(body?.preferred));
   const message = truncate(sanitize(body?.message));
+  const honeypot = sanitize(body?.website);
+  const startedAt = Number(body?.startedAt ?? 0);
+
+  if (honeypot) {
+    return NextResponse.json({ ok: true });
+  }
+
+  if (startedAt && Date.now() - startedAt < 2000) {
+    return NextResponse.json({ ok: false, error: "spam_detected" }, { status: 400 });
+  }
 
   if (!category || !name || !contact || !message) {
     return NextResponse.json(
@@ -102,6 +112,40 @@ export async function POST(request: Request) {
     subject,
     text: lines.join("\n"),
   });
+
+  if (isEmail(contact)) {
+    const replySubject = `【${label}】お問い合わせありがとうございます`;
+    const replyLines = [
+      `${name} 様`,
+      "",
+      "この度はお問い合わせいただき、誠にありがとうございます。",
+      "以下の内容で受け付けました。担当より折り返しご連絡いたします。",
+      "",
+      "----",
+      `カテゴリ: ${label}`,
+      `お名前: ${name}`,
+      `連絡先: ${contact}`,
+      organization ? `法人・組織名: ${organization}` : null,
+      preferred ? `希望対応: ${preferred}` : null,
+      `送信日時: ${timestamp}`,
+      "",
+      "お問い合わせ内容:",
+      message,
+      "----",
+    ].filter(Boolean);
+
+    try {
+      await transporter.sendMail({
+        from: `"${fromName}" <${smtpUser}>`,
+        to: contact,
+        replyTo: contactTo,
+        subject: replySubject,
+        text: replyLines.join("\n"),
+      });
+    } catch (error) {
+      console.warn("Auto-reply failed:", error);
+    }
+  }
 
   return NextResponse.json({ ok: true });
 }
