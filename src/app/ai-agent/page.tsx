@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -290,16 +291,14 @@ export default function AIAgentPage() {
               ))}
             </div>
           </div>
-          <div className="flex items-center justify-center rounded-3xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-12">
-            <div className="text-center">
-              <p className="text-6xl">🤖</p>
-              <p className="mt-4 text-lg font-semibold text-[var(--ink)]">
-                もう1人の社員を
-              </p>
-              <p className="text-sm text-[var(--ink-muted)]">
-                事業所の中に、月5万円から
-              </p>
-            </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
+            <Image
+              src="/legacy/it-dashboard.png"
+              alt="AIエージェント管理画面のイメージ"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </Reveal>
 
@@ -329,15 +328,28 @@ export default function AIAgentPage() {
 
         {/* Features */}
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-sm">
-          <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
-            Features
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
-            AIエージェントの特長
-          </h2>
-          <p className="mt-4 text-sm text-[var(--ink-muted)]">
-            ChatGPTは「聞けば答える辞書」。AIエージェントは「自分で働く社員」です。
-          </p>
+          <div className="grid gap-8 lg:grid-cols-[1fr,0.6fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
+                Features
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
+                AIエージェントの特長
+              </h2>
+              <p className="mt-4 text-sm text-[var(--ink-muted)]">
+                ChatGPTは「聞けば答える辞書」。AIエージェントは「自分で働く社員」です。
+              </p>
+            </div>
+            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
+              <Image
+                src="/legacy/homecare-robot.png"
+                alt="AIテクノロジーのイメージ"
+                fill
+                className="object-cover"
+                sizes="33vw"
+              />
+            </div>
+          </div>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((f) => (
               <div
@@ -395,15 +407,28 @@ export default function AIAgentPage() {
 
         {/* Use Cases */}
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-sm">
-          <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
-            Use Cases
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
-            導入事例・活用例
-          </h2>
-          <p className="mt-4 text-sm text-[var(--ink-muted)]">
-            医療・介護から中小企業まで、業種を問わず導入いただけます。
-          </p>
+          <div className="grid gap-8 lg:grid-cols-[1fr,0.5fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
+                Use Cases
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
+                導入事例・活用例
+              </h2>
+              <p className="mt-4 text-sm text-[var(--ink-muted)]">
+                医療・介護から中小企業まで、業種を問わず導入いただけます。
+              </p>
+            </div>
+            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
+              <Image
+                src="/legacy/homecare-consult.png"
+                alt="導入相談のイメージ"
+                fill
+                className="object-cover"
+                sizes="33vw"
+              />
+            </div>
+          </div>
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {useCases.map((uc) => (
               <div
@@ -516,12 +541,25 @@ export default function AIAgentPage() {
 
         {/* Security */}
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-sm">
-          <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
-            Security
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
-            セキュリティ・データ管理
-          </h2>
+          <div className="grid gap-8 lg:grid-cols-[1fr,0.5fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
+                Security
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
+                セキュリティ・データ管理
+              </h2>
+            </div>
+            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
+              <Image
+                src="/legacy/it-security.png"
+                alt="セキュリティのイメージ"
+                fill
+                className="object-cover"
+                sizes="33vw"
+              />
+            </div>
+          </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {securityItems.map((s) => (
               <div
@@ -540,13 +578,26 @@ export default function AIAgentPage() {
         </Reveal>
 
         {/* Steps */}
-        <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-sm">
-          <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
-            Flow
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
-            導入の流れ
-          </h2>
+        <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)]">
+          <div className="grid gap-8 lg:grid-cols-[1fr,0.5fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
+                Flow
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
+                導入の流れ
+              </h2>
+            </div>
+            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
+              <Image
+                src="/legacy/it-teamwork.png"
+                alt="チームワークのイメージ"
+                fill
+                className="object-cover"
+                sizes="33vw"
+              />
+            </div>
+          </div>
           <div className="mt-8 grid gap-6 lg:grid-cols-4">
             {steps.map((s, i) => (
               <div
