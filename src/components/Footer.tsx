@@ -26,6 +26,9 @@ export default function Footer() {
           <Link href="/it" className="hover:text-[var(--brand)]">
             医療IT
           </Link>
+          <Link href="/ai-agent" className="hover:text-[var(--brand)]">
+            AIエージェント
+          </Link>
           <Link
             href="/products/cocokarte"
             className="hover:text-[var(--brand)]"
