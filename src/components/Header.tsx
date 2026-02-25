@@ -14,6 +14,7 @@ const navItemsPrimary = [
   { label: "会社情報", href: "/company" },
   { label: "事業紹介", href: "/services" },
   { label: "医療IT", href: "/it" },
+  { label: "AIエージェント", href: "/ai-agent" },
   { label: "製品紹介", href: "/products/cocokarte" },
   { label: "お問い合わせ", href: "/contact" },
 ];
