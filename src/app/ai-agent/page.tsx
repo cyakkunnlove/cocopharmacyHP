@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const highlights = [
   { title: "操作", detail: "スマホに話しかけるだけ" },
   { title: "データ", detail: "事業所内のMac miniに保管" },
-  { title: "初期費用", detail: "¥1,500,000〜（税別）" },
-  { title: "月額", detail: "¥50,000〜（税別）" },
+  { title: "初期費用", detail: "¥2,500,000〜（税別）" },
+  { title: "月額", detail: "¥80,000〜（税別）" },
 ];
 
 const painPoints = [
@@ -137,14 +137,14 @@ const useCases = [
       "日報・報告書の自動整理",
       "経営数値の自動レポート",
     ],
-    effect: "事務員1人分の業務を月5〜12万円で実現",
+    effect: "事務員1人分の業務を月8〜20万円で実現",
   },
 ];
 
 const plans = [
   {
     name: "ライト",
-    price: "50,000",
+    price: "80,000",
     description: "導入+1ヶ月サポート",
     features: [
       "初期設定・導入サポート",
@@ -156,7 +156,7 @@ const plans = [
   },
   {
     name: "スタンダード",
-    price: "80,000",
+    price: "140,000",
     description: "継続サポート+ツール作成",
     features: [
       "ライトプランの全機能",
@@ -168,7 +168,7 @@ const plans = [
   },
   {
     name: "プレミアム",
-    price: "120,000",
+    price: "200,000",
     description: "フルサポート+直接相談",
     features: [
       "スタンダードの全機能",
@@ -472,7 +472,7 @@ export default function AIAgentPage() {
               初期費用
             </p>
             <p className="mt-2 text-3xl font-bold text-[var(--ink)]">
-              ¥1,500,000〜
+              ¥2,500,000〜
               <span className="text-base font-normal text-[var(--ink-muted)]">
                 （税別）
               </span>
