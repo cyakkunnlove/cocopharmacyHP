@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const highlights = [
   { title: "操作", detail: "スマホに話しかけるだけ" },
   { title: "データ", detail: "事業所内のMac miniに保管" },
-  { title: "初期費用", detail: "¥2,500,000〜（税別）" },
-  { title: "月額", detail: "¥80,000〜（税別）" },
+  { title: "初期費用", detail: "¥2,800,000〜（税別）" },
+  { title: "月額", detail: "¥120,000〜（税別）" },
 ];
 
 const painPoints = [
@@ -137,46 +137,79 @@ const useCases = [
       "日報・報告書の自動整理",
       "経営数値の自動レポート",
     ],
-    effect: "事務員1人分の業務を月8〜20万円で実現",
+    effect: "専任人材を雇わずに月12〜28万円で継続改善",
   },
 ];
 
 const plans = [
   {
     name: "ライト",
-    price: "80,000",
-    description: "導入+1ヶ月サポート",
+    price: "120,000",
+    description: "小さく始める基本運用",
     features: [
-      "初期設定・導入サポート",
-      "1ヶ月間の保証・調整対応",
-      "基本機能すべて利用可能",
-      "サポート終了後は自走運用",
+      "基本AIエージェント1系統",
+      "月1回の運用レビュー",
+      "軽微なプロンプト・文面調整",
+      "メール/チャットでの通常サポート",
     ],
     recommended: false,
   },
   {
     name: "スタンダード",
-    price: "140,000",
-    description: "継続サポート+ツール作成",
+    price: "180,000",
+    description: "改善しながら定着させる標準プラン",
     features: [
       "ライトプランの全機能",
-      "定期的なAI・機能の更新",
-      "業務相談・悩み対応",
-      "相談に応じたツール追加作成",
+      "月2回の業務改善ミーティング",
+      "月1件までの小規模ツール追加",
+      "業務フロー変更に伴う調整対応",
     ],
     recommended: true,
   },
   {
     name: "プレミアム",
-    price: "200,000",
-    description: "フルサポート+直接相談",
+    price: "280,000",
+    description: "複数業務をまとめて任せる伴走プラン",
     features: [
       "スタンダードの全機能",
-      "即時対応（優先サポート）",
-      "最新AI・機能を随時適用",
-      "担当者への直接相談OK",
+      "月2件までの小規模ツール追加",
+      "優先サポート・緊急時の初動対応",
+      "経営/現場向けレポート改善支援",
     ],
     recommended: false,
+  },
+];
+
+const options = [
+  {
+    name: "追加業務フロー構築",
+    price: "¥150,000〜",
+    detail: "請求、報告書、予約管理など新しい業務をAIに追加する場合",
+  },
+  {
+    name: "既存データ移行・整備",
+    price: "¥100,000〜",
+    detail: "Excel、CSV、PDF、紙運用からの初期データ整理・登録",
+  },
+  {
+    name: "外部システム連携",
+    price: "¥300,000〜",
+    detail: "電子カルテ、会計、予約、LINE、Google Workspace等との連携",
+  },
+  {
+    name: "現地研修・運用定着支援",
+    price: "¥80,000〜/半日",
+    detail: "スタッフ向け説明、初回利用サポート、現場オペレーション整理",
+  },
+  {
+    name: "追加拠点・追加端末設定",
+    price: "¥150,000〜 + 実費",
+    detail: "複数店舗・複数拠点で使う場合のネットワーク/端末追加設定",
+  },
+  {
+    name: "補助金申請サポート",
+    price: "¥150,000〜",
+    detail: "申請資料の整理、事業計画のたたき台作成、導入効果の言語化",
   },
 ];
 
@@ -472,13 +505,13 @@ export default function AIAgentPage() {
               初期費用
             </p>
             <p className="mt-2 text-3xl font-bold text-[var(--ink)]">
-              ¥2,500,000〜
+              ¥2,800,000〜
               <span className="text-base font-normal text-[var(--ink-muted)]">
                 （税別）
               </span>
             </p>
             <p className="mt-2 text-xs text-[var(--ink-muted)]">
-              デバイス本体・セットアップ・業務ヒアリング・初期研修・データ初期登録を含みます
+              デバイス本体・セットアップ・業務ヒアリング・初期設計・初期研修・基本データ登録を含みます
             </p>
           </div>
 
@@ -535,8 +568,45 @@ export default function AIAgentPage() {
           </div>
 
           <p className="mt-6 text-center text-xs text-[var(--ink-muted)]">
-            ※ 補助金（デジタル化・AI導入補助金等）の活用で実質負担を軽減できる場合があります。
+            ※ 表示価格は標準構成の目安です。業務範囲、連携先、データ量、現地対応の有無により個別見積となります。
           </p>
+
+          <div className="mt-8 rounded-2xl border border-[rgba(11,33,66,0.12)] bg-white p-6">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand)]">
+                  Options
+                </p>
+                <h3 className="mt-2 text-xl font-semibold">主なオプション</h3>
+              </div>
+              <p className="text-xs text-[var(--ink-muted)]">
+                必要な分だけ追加できます
+              </p>
+            </div>
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              {options.map((option) => (
+                <div
+                  key={option.name}
+                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-5"
+                >
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                    <h4 className="text-sm font-semibold text-[var(--ink)]">
+                      {option.name}
+                    </h4>
+                    <p className="text-sm font-bold text-[var(--brand)]">
+                      {option.price}
+                    </p>
+                  </div>
+                  <p className="mt-2 text-sm text-[var(--ink-muted)]">
+                    {option.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-xs text-[var(--ink-muted)]">
+              補助金・助成金の活用は、対象要件を確認したうえで申請方針をご提案します。採択や補助額を保証するものではありません。
+            </p>
+          </div>
         </Reveal>
 
         {/* Security */}
