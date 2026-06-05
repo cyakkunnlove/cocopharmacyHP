@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const highlights = [
   { title: "操作", detail: "スマホに話しかけるだけ" },
   { title: "データ", detail: "事業所内のMac miniに保管" },
-  { title: "初期費用", detail: "¥2,800,000〜（税別）" },
-  { title: "月額", detail: "¥120,000〜（税別）" },
+  { title: "初期費用", detail: "個別見積もり" },
+  { title: "月額", detail: "個別見積もり" },
 ];
 
 const painPoints = [
@@ -137,14 +137,14 @@ const useCases = [
       "日報・報告書の自動整理",
       "経営数値の自動レポート",
     ],
-    effect: "専任人材を雇わずに月12〜38万円で継続改善",
+    effect: "専任人材を雇わず、業務範囲に合わせて継続改善",
   },
 ];
 
 const plans = [
   {
     name: "ライト",
-    price: "120,000",
+    price: "個別見積もり",
     description: "小さく始める基本運用",
     features: [
       "基本AIエージェント1系統",
@@ -156,7 +156,7 @@ const plans = [
   },
   {
     name: "スタンダード",
-    price: "180,000",
+    price: "個別見積もり",
     description: "改善しながら定着させる標準プラン",
     features: [
       "ライトプランの全機能",
@@ -168,7 +168,7 @@ const plans = [
   },
   {
     name: "プレミアム",
-    price: "380,000",
+    price: "個別見積もり",
     description: "複数業務をまとめて任せる伴走プラン",
     features: [
       "スタンダードの全機能",
@@ -183,32 +183,32 @@ const plans = [
 const options = [
   {
     name: "追加業務フロー構築",
-    price: "¥150,000〜",
+    price: "個別見積もり",
     detail: "請求、報告書、予約管理など新しい業務をAIに追加する場合",
   },
   {
     name: "既存データ移行・整備",
-    price: "¥100,000〜",
+    price: "個別見積もり",
     detail: "Excel、CSV、PDF、紙運用からの初期データ整理・登録",
   },
   {
     name: "外部システム連携",
-    price: "¥300,000〜",
+    price: "個別見積もり",
     detail: "電子カルテ、会計、予約、LINE、Google Workspace等との連携",
   },
   {
     name: "現地研修・運用定着支援",
-    price: "¥80,000〜/半日",
+    price: "個別見積もり",
     detail: "スタッフ向け説明、初回利用サポート、現場オペレーション整理",
   },
   {
     name: "追加拠点・追加端末設定",
-    price: "¥150,000〜 + 実費",
+    price: "個別見積もり",
     detail: "複数店舗・複数拠点で使う場合のネットワーク/端末追加設定",
   },
   {
     name: "補助金申請サポート",
-    price: "¥150,000〜",
+    price: "個別見積もり",
     detail: "申請資料の整理、事業計画のたたき台作成、導入効果の言語化",
   },
 ];
@@ -505,10 +505,7 @@ export default function AIAgentPage() {
               初期費用
             </p>
             <p className="mt-2 text-3xl font-bold text-[var(--ink)]">
-              ¥2,800,000〜
-              <span className="text-base font-normal text-[var(--ink-muted)]">
-                （税別）
-              </span>
+              個別見積もり
             </p>
             <p className="mt-2 text-xs text-[var(--ink-muted)]">
               デバイス本体・セットアップ・業務ヒアリング・初期設計・初期研修・基本データ登録を含みます
@@ -534,10 +531,7 @@ export default function AIAgentPage() {
                   {plan.name}プラン
                 </p>
                 <p className="mt-2 text-2xl font-bold text-[var(--ink)]">
-                  ¥{plan.price}
-                  <span className="text-sm font-normal text-[var(--ink-muted)]">
-                    /月（税別）
-                  </span>
+                  {plan.price}
                 </p>
                 <p className="mt-1 text-xs text-[var(--ink-muted)]">
                   {plan.description}
@@ -568,7 +562,7 @@ export default function AIAgentPage() {
           </div>
 
           <p className="mt-6 text-center text-xs text-[var(--ink-muted)]">
-            ※ 表示価格は標準構成の目安です。業務範囲、連携先、データ量、現地対応の有無により個別見積となります。
+            ※ 業務範囲、連携先、データ量、現地対応の有無により費用が変わるため、要件確認後に個別にお見積りします。
           </p>
 
           <div className="mt-8 rounded-2xl border border-[rgba(11,33,66,0.12)] bg-white p-6">

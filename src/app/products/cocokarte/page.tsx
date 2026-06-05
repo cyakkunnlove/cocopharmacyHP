@@ -263,25 +263,24 @@ export default function CoCoKartePage() {
             <h2 className="text-xl font-semibold">価格について</h2>
             <div className="mt-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-6">
               <p className="text-xs uppercase tracking-[0.24em] text-[var(--brand)]">
-                基本プラン（標準価格）
+                基本プラン
               </p>
               <div className="mt-4 grid gap-4 md:grid-cols-2">
                 <div>
                   <p className="text-sm font-semibold text-[var(--ink)]">
-                    初期導入費：1,200,000円（税別） ※IT導入補助金 対象ツール（予定）。
-                    補助金を活用することで、実質負担額を大幅に抑えて導入可能です。
+                    初期導入費：個別見積もり
                   </p>
                   <p className="mt-2 text-sm text-[var(--ink-muted)]">
                     システム構築・LINE公式アカウント開設支援・
-                    データ移行支援・操作レクチャーを含みます。
+                    データ移行支援・操作レクチャーの範囲を確認してお見積りします。
                   </p>
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-[var(--ink)]">
-                    月額利用料：30,000円（税別）
+                    月額利用料：個別見積もり
                   </p>
                   <p className="mt-2 text-sm text-[var(--ink-muted)]">
-                    サーバー保守・セキュリティ監視・LINE連携費を含みます。
+                    サーバー保守・セキュリティ監視・LINE連携など、運用内容に合わせてご提案します。
                   </p>
                 </div>
               </div>
