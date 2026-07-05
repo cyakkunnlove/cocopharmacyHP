@@ -14,14 +14,15 @@ type Blob = {
 };
 
 const BLOBS: Blob[] = [
-  { x: 0.78, y: 0.2, r: 0.55, rgb: "27,141,138", alpha: 0.09, depth: 0.05, speed: 0.00008, phase: 0.0 },
-  { x: 0.15, y: 0.8, r: 0.5, rgb: "199,168,118", alpha: 0.1, depth: 0.035, speed: 0.00006, phase: 2.1 },
-  { x: 0.45, y: 0.35, r: 0.6, rgb: "255,255,255", alpha: 0.35, depth: 0.02, speed: 0.00005, phase: 4.2 },
-  { x: 0.9, y: 0.75, r: 0.4, rgb: "27,141,138", alpha: 0.06, depth: 0.06, speed: 0.0001, phase: 1.3 },
-  { x: 0.3, y: 0.1, r: 0.35, rgb: "199,168,118", alpha: 0.07, depth: 0.045, speed: 0.00009, phase: 5.5 },
+  { x: 0.78, y: 0.2, r: 0.55, rgb: "27,141,138", alpha: 0.12, depth: 0.09, speed: 0.00014, phase: 0.0 },
+  { x: 0.15, y: 0.8, r: 0.5, rgb: "199,168,118", alpha: 0.13, depth: 0.06, speed: 0.0001, phase: 2.1 },
+  { x: 0.45, y: 0.35, r: 0.6, rgb: "255,255,255", alpha: 0.4, depth: 0.04, speed: 0.00008, phase: 4.2 },
+  { x: 0.9, y: 0.75, r: 0.4, rgb: "27,141,138", alpha: 0.08, depth: 0.11, speed: 0.00017, phase: 1.3 },
+  { x: 0.3, y: 0.1, r: 0.35, rgb: "199,168,118", alpha: 0.09, depth: 0.08, speed: 0.00015, phase: 5.5 },
 ];
 
-const RIPPLE_PERIOD = 3200; // ms間隔で水紋を発生
+const DRIFT = 0.09; // 漂いの振幅（画面比）
+const RIPPLE_PERIOD = 2200; // ms間隔で水紋を発生
 
 export default function WaterBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -65,15 +66,15 @@ export default function WaterBackground() {
       const base = Math.min(w, h);
 
       // カーソルへ「ふわっと」遅れて近づく
-      mx += (tx - mx) * 0.035;
-      my += (ty - my) * 0.035;
+      mx += (tx - mx) * 0.055;
+      my += (ty - my) * 0.055;
 
       for (const b of BLOBS) {
         const cx =
-          (b.x + Math.sin(t * b.speed + b.phase) * 0.05) * w +
+          (b.x + Math.sin(t * b.speed + b.phase) * DRIFT) * w +
           (mx - 0.5) * w * b.depth;
         const cy =
-          (b.y + Math.cos(t * b.speed * 1.3 + b.phase) * 0.05) * h +
+          (b.y + Math.cos(t * b.speed * 1.3 + b.phase) * DRIFT) * h +
           (my - 0.5) * h * b.depth;
         const r = b.r * base;
         const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
@@ -92,8 +93,8 @@ export default function WaterBackground() {
         my * h,
         base * 0.32
       );
-      gr.addColorStop(0, "rgba(27,141,138,0.07)");
-      gr.addColorStop(0.5, "rgba(255,255,255,0.06)");
+      gr.addColorStop(0, "rgba(27,141,138,0.11)");
+      gr.addColorStop(0.5, "rgba(255,255,255,0.09)");
       gr.addColorStop(1, "rgba(255,255,255,0)");
       ctx.fillStyle = gr;
       ctx.fillRect(0, 0, w, h);
@@ -102,18 +103,27 @@ export default function WaterBackground() {
       if (t - lastRipple > RIPPLE_PERIOD) {
         ripples.push({ x: mx, y: my, born: t });
         lastRipple = t;
-        if (ripples.length > 3) ripples.shift();
+        if (ripples.length > 5) ripples.shift();
       }
       for (const rp of ripples) {
-        const age = (t - rp.born) / 4000; // 0→1
+        const age = (t - rp.born) / 3200; // 0→1
         if (age >= 1) continue;
-        const rr = base * (0.05 + age * 0.35);
-        const fade = (1 - age) * 0.1;
+        const rr = base * (0.04 + age * 0.42);
+        const fade = (1 - age) * 0.16;
         ctx.beginPath();
         ctx.arc(rp.x * w, rp.y * h, rr, 0, Math.PI * 2);
         ctx.strokeStyle = `rgba(27,141,138,${fade})`;
-        ctx.lineWidth = 1.2;
+        ctx.lineWidth = 1.4;
         ctx.stroke();
+        // 内側にもう一輪、少し遅れて追いかける
+        if (age > 0.15) {
+          const rr2 = base * (0.02 + (age - 0.15) * 0.3);
+          ctx.beginPath();
+          ctx.arc(rp.x * w, rp.y * h, rr2, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(255,255,255,${fade * 0.8})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
       }
     };
 
@@ -128,8 +138,18 @@ export default function WaterBackground() {
 
     const onMove = (e: PointerEvent) => {
       const rect = canvas.getBoundingClientRect();
-      tx = (e.clientX - rect.left) / rect.width;
-      ty = (e.clientY - rect.top) / rect.height;
+      const nx = (e.clientX - rect.left) / rect.width;
+      const ny = (e.clientY - rect.top) / rect.height;
+      // 大きく動かしたときは、その場から即座に水紋を発生させる
+      const now = performance.now();
+      const dist = Math.hypot(nx - tx, ny - ty);
+      if (dist > 0.12 && now - lastRipple > 500) {
+        ripples.push({ x: nx, y: ny, born: now });
+        lastRipple = now;
+        if (ripples.length > 5) ripples.shift();
+      }
+      tx = nx;
+      ty = ny;
     };
 
     resize();
