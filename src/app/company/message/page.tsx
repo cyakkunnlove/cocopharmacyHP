@@ -45,9 +45,12 @@ export default function MessagePage() {
             さまざまな業界の方々と協力しながら、
             新しい薬剤師像と薬局のあり方を目指していきます。
           </p>
-          <p className="mt-6 text-sm font-semibold text-[var(--ink)]">
-            株式会社メディカル東京
-          </p>
+          <div className="mt-8 border-t border-[rgba(11,33,66,0.08)] pt-6 text-right">
+            <p className="text-xs text-[var(--ink-muted)]">株式会社メディカル東京</p>
+            <p className="mt-1 text-base font-semibold text-[var(--ink)]">
+              代表取締役　冷水 雅行
+            </p>
+          </div>
         </Reveal>
       </main>
 

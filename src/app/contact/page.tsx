@@ -30,7 +30,7 @@ export default function ContactPage() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-2">
           <ContactForm
             category="pharmacy"
             title="薬局へのお問い合わせ"
@@ -43,7 +43,7 @@ export default function ContactPage() {
           />
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr,1.1fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">連絡先・アクセス</h2>
             <div className="mt-4 space-y-2 text-sm text-[var(--ink-muted)]">

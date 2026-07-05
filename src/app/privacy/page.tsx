@@ -54,11 +54,11 @@ export default function PrivacyPage() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-2">
           {items.map((item) => (
             <Reveal
               key={item.title}
-              className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
+              className="card-lift rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
             >
               <h2 className="text-lg font-semibold">{item.title}</h2>
               <p className="mt-3 text-sm text-[var(--ink-muted)]">

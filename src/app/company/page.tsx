@@ -112,11 +112,11 @@ export default function CompanyPage() {
             在宅医療の現場力と医療IT支援の実装力を両輪に、地域医療の基盤を支えます。
             医療機関・施設との連携を前提に、実務に強い支援を提供しています。
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="stagger mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {facts.map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
               >
                 <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--brand)]">
                   {item.label}
@@ -129,11 +129,11 @@ export default function CompanyPage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-3">
           {policyItems.map((item) => (
             <Reveal
               key={item.title}
-              className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
+              className="card-lift rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
             >
               <h2 className="text-lg font-semibold">{item.title}</h2>
               <p className="mt-3 text-sm text-[var(--ink-muted)]">
@@ -143,7 +143,7 @@ export default function CompanyPage() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-3">
           {highlights.map((item) => (
             <Reveal
               key={item.title}
@@ -157,7 +157,7 @@ export default function CompanyPage() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="stagger mt-10 grid gap-6 md:grid-cols-3">
           {[
             { title: "理念・ビジョン", href: "/company/mission" },
             { title: "沿革", href: "/company/history" },
@@ -181,11 +181,11 @@ export default function CompanyPage() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr,0.8fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
           <Reveal className="relative overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <div className="absolute inset-0">
               <Image
-                src="/legacy/storefront.png"
+                src="/legacy/storefront.jpg"
                 alt="ココ薬局 千葉中央店 外観"
                 fill
                 className="object-cover opacity-70"
@@ -199,7 +199,7 @@ export default function CompanyPage() {
                 {corporateInfo.map((info) => (
                   <div
                     key={info.label}
-                    className="grid gap-2 border-b border-[rgba(11,33,66,0.08)] pb-3 md:grid-cols-[140px,1fr]"
+                    className="grid gap-2 border-b border-[rgba(11,33,66,0.08)] pb-3 md:grid-cols-[140px_1fr]"
                   >
                     <dt className="font-semibold text-[var(--ink)]">
                       {info.label}
@@ -224,14 +224,14 @@ export default function CompanyPage() {
           </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">店舗情報</h2>
             <dl className="mt-6 space-y-4 text-sm">
               {storeInfo.map((info) => (
                 <div
                   key={info.label}
-                  className="grid gap-2 border-b border-[rgba(11,33,66,0.08)] pb-3 md:grid-cols-[140px,1fr]"
+                  className="grid gap-2 border-b border-[rgba(11,33,66,0.08)] pb-3 md:grid-cols-[140px_1fr]"
                 >
                   <dt className="font-semibold text-[var(--ink)]">
                     {info.label}
@@ -252,7 +252,7 @@ export default function CompanyPage() {
           </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr,1.1fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">沿革ハイライト</h2>
             <div className="mt-6 space-y-3 text-sm text-[var(--ink-muted)]">

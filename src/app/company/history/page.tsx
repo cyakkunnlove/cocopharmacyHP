@@ -53,7 +53,7 @@ export default function HistoryPage() {
           {timeline.map((item) => (
             <Reveal
               key={item.title}
-              className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
+              className="card-lift rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
             >
               <p className="text-xs text-[var(--brand)]">{item.year}</p>
               <h2 className="mt-2 text-xl font-semibold">{item.title}</h2>

@@ -16,7 +16,7 @@ const services = [
     tagline: "調剤・服薬指導を基盤にした地域支援",
     description:
       "処方箋調剤・服薬指導を中心に、患者さまの生活に寄り添った支援を行います。",
-    image: "/legacy/patient.png",
+    image: "/legacy/patient.jpg",
     items: ["処方箋調剤", "服薬指導", "在宅訪問", "医療機関との連携"],
   },
   {
@@ -24,7 +24,7 @@ const services = [
     tagline: "医療機関・施設と連携した運用体制",
     description:
       "医療機関・施設との連携を前提に、在宅医療を支える運用体制を整備します。",
-    image: "/legacy/homecare-consult.png",
+    image: "/legacy/homecare-consult.jpg",
     items: ["訪問体制の設計", "連携フロー構築", "継続フォロー"],
   },
   {
@@ -32,7 +32,7 @@ const services = [
     tagline: "現場課題に即したIT実装支援",
     description:
       "医療現場の業務効率化と価値向上を目的に、実装とプロダクト導入を支援します。",
-    image: "/legacy/it-dashboard.png",
+    image: "/legacy/it-dashboard.jpg",
     items: [
       "Webアプリ開発",
       "業務フロー可視化・要件定義",
@@ -115,7 +115,7 @@ export default function ServicesPage() {
       <Header />
 
       <main className="mx-auto max-w-6xl px-6 py-16">
-        <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)] lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+        <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
               Services
@@ -126,11 +126,11 @@ export default function ServicesPage() {
             <p className="mt-4 max-w-2xl text-sm text-[var(--ink-muted)]">
               薬局事業と医療IT事業を同格に展開。医療現場の実務に即した支援で地域医療の基盤を支えます。
             </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="stagger mt-6 grid gap-3 sm:grid-cols-2">
               {serviceHighlights.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
                 >
                   <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--brand)]">
                     {item.title}
@@ -142,9 +142,9 @@ export default function ServicesPage() {
               ))}
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
+          <div className="img-zoom relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
-              src="/legacy/homecare-teamwork.png"
+              src="/legacy/homecare-teamwork.jpg"
               alt="事業紹介のイメージ"
               fill
               className="object-cover"
@@ -153,13 +153,13 @@ export default function ServicesPage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-3">
           {services.map((service) => (
             <Reveal
               key={service.title}
-              className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
+              className="card-lift rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
             >
-              <div className="relative h-36 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
+              <div className="img-zoom relative h-36 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -198,11 +198,11 @@ export default function ServicesPage() {
             医療現場に負担をかけない進め方で、課題整理から運用支援まで一貫して対応します。
           </p>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-4">
+          <div className="stagger mt-8 grid gap-6 lg:grid-cols-4">
             {workflowSteps.map((step, index) => (
               <div
                 key={step.title}
-                className="relative rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
+                className="card-lift relative rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
               >
                 <p className="text-xs font-semibold text-[var(--brand)]">
                   STEP {index + 1}
@@ -230,11 +230,11 @@ export default function ServicesPage() {
             守秘義務のため名称は非公開。公開可能な範囲で概要のみ掲載しています。
           </p>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="stagger mt-8 grid gap-6 md:grid-cols-3">
             {caseStudies.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
               >
                 <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--gold)]">
                   {item.tag}
@@ -250,11 +250,11 @@ export default function ServicesPage() {
 
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
           <h2 className="text-xl font-semibold">支援の価値</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="stagger mt-6 grid gap-4 md:grid-cols-2">
             {supportValues.map((item) => (
               <div
                 key={item}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4 text-sm text-[var(--ink-muted)]"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4 text-sm text-[var(--ink-muted)]"
               >
                 {item}
               </div>

@@ -64,7 +64,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="whitespace-nowrap transition hover:text-[var(--brand)]"
+                className="nav-link whitespace-nowrap transition hover:text-[var(--brand)]"
               >
                 {item.label}
               </Link>

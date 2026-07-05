@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     "在宅医療と医療IT支援を両輪に、地域医療の基盤を支える株式会社メディカル東京。",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.cocopharmacy1.com"
   ),
   icons: {
     icon: "/legacy/cocofavicon.png",
@@ -38,7 +38,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/legacy/patient.png",
+        url: "/legacy/og.jpg",
+        width: 1200,
+        height: 630,
         alt: "株式会社メディカル東京",
       },
     ],
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     title: "株式会社メディカル東京",
     description:
       "在宅医療と医療IT支援を両輪に、地域医療の基盤を支える株式会社メディカル東京。",
-    images: ["/legacy/patient.png"],
+    images: ["/legacy/og.jpg"],
   },
 };
 
