@@ -32,13 +32,13 @@ export default function NewsPage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="stagger mt-10 grid gap-6 md:grid-cols-2">
           {newsItems.map((news) => (
             <Reveal
               key={`${news.date}-${news.title}`}
-              className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
+              className="card-lift rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
             >
-              <div className="relative h-40 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
+              <div className="img-zoom relative h-40 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
                 <Image
                   src={news.image ?? "/legacy/news-hero.jpg"}
                   alt={news.title}

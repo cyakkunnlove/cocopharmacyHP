@@ -182,7 +182,7 @@ export default function ItPage() {
               </span>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
+          <div className="img-zoom relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
               src="/legacy/it-hero.jpg"
               alt="医療IT支援のイメージ"
@@ -212,7 +212,7 @@ export default function ItPage() {
               製品ページを見る
             </a>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
+          <div className="img-zoom relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
               src="/legacy/it-dashboard.jpg"
               alt="CoCoKarteの画面イメージ"
@@ -226,11 +226,11 @@ export default function ItPage() {
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">支援内容</h2>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <div className="stagger mt-6 grid gap-4 md:grid-cols-2">
               {capabilities.map((capability) => (
                 <div
                   key={capability.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
                 >
                   <h3 className="text-sm font-semibold text-[var(--ink)]">
                     {capability.title}
@@ -273,11 +273,11 @@ export default function ItPage() {
               構想・準備中
             </span>
           </div>
-          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="stagger mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {productRoadmap.map((product) => (
               <div
                 key={product.title}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
               >
                 <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand)]">
                   {product.title}
@@ -290,7 +290,7 @@ export default function ItPage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-2">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">対応領域</h2>
             <div className="mt-4 relative h-40 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
@@ -302,11 +302,11 @@ export default function ItPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <div className="stagger mt-6 grid gap-4 md:grid-cols-2">
               {domains.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
                 >
                   <p className="text-sm font-semibold text-[var(--ink)]">
                     {item.title}
@@ -342,11 +342,11 @@ export default function ItPage() {
 
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
           <h2 className="text-xl font-semibold">導入プロセス</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-4">
+          <div className="stagger mt-6 grid gap-4 md:grid-cols-4">
             {processSteps.map((step, index) => (
               <div
                 key={step.title}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
               >
                 <p className="text-xs font-semibold text-[var(--brand)]">
                   STEP {index + 1}
@@ -362,14 +362,14 @@ export default function ItPage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-2">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">よくある相談</h2>
             <div className="mt-6 space-y-4 text-sm text-[var(--ink-muted)]">
               {faqs.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
                 >
                   <p className="text-sm font-semibold text-[var(--ink)]">
                     {item.title}

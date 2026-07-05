@@ -112,7 +112,7 @@ export default function HomecarePage() {
               </span>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
+          <div className="img-zoom relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
               src="/legacy/patienthand-2-v2.jpg"
               alt="在宅医療のイメージ"
@@ -139,7 +139,7 @@ export default function HomecarePage() {
               {steps.map((step, index) => (
                 <div
                   key={step.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
                 >
                   <p className="text-xs font-semibold text-[var(--brand)]">
                     STEP {index + 1}
@@ -170,14 +170,14 @@ export default function HomecarePage() {
           </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-2">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">提供メニュー</h2>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <div className="stagger mt-6 grid gap-4 md:grid-cols-2">
               {serviceMenu.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
                 >
                   <p className="text-sm font-semibold text-[var(--ink)]">
                     {item.title}
@@ -195,7 +195,7 @@ export default function HomecarePage() {
               {faqItems.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
                 >
                   <p className="text-sm font-semibold text-[var(--ink)]">
                     {item.title}
@@ -235,7 +235,7 @@ export default function HomecarePage() {
               </li>
             </ul>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
+          <div className="img-zoom relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
               src="/legacy/homecare-robot.jpg"
               alt="服薬支援ロボの活用イメージ"
@@ -246,7 +246,7 @@ export default function HomecarePage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-2">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">連携体制</h2>
             <div className="mt-4 relative h-36 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">

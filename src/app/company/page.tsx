@@ -112,11 +112,11 @@ export default function CompanyPage() {
             在宅医療の現場力と医療IT支援の実装力を両輪に、地域医療の基盤を支えます。
             医療機関・施設との連携を前提に、実務に強い支援を提供しています。
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="stagger mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {facts.map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
               >
                 <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--brand)]">
                   {item.label}
@@ -129,11 +129,11 @@ export default function CompanyPage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-3">
           {policyItems.map((item) => (
             <Reveal
               key={item.title}
-              className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
+              className="card-lift rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
             >
               <h2 className="text-lg font-semibold">{item.title}</h2>
               <p className="mt-3 text-sm text-[var(--ink-muted)]">
@@ -143,7 +143,7 @@ export default function CompanyPage() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-3">
           {highlights.map((item) => (
             <Reveal
               key={item.title}
@@ -157,7 +157,7 @@ export default function CompanyPage() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="stagger mt-10 grid gap-6 md:grid-cols-3">
           {[
             { title: "理念・ビジョン", href: "/company/mission" },
             { title: "沿革", href: "/company/history" },

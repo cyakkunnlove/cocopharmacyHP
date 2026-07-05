@@ -106,7 +106,7 @@ export default function RecruitPage() {
               </span>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
+          <div className="img-zoom relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
               src="/legacy/recruit-hero.jpg"
               alt="採用情報のイメージ"
@@ -151,7 +151,7 @@ export default function RecruitPage() {
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm">
+          <Reveal className="card-lift rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm">
             <h2 className="text-lg font-semibold">職場の雰囲気</h2>
             <div className="mt-4 relative h-48 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
               <Image
@@ -166,11 +166,11 @@ export default function RecruitPage() {
               在宅医療と医療ITの現場に触れながら、チームで学び合える環境です。
             </p>
           </Reveal>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="stagger grid gap-6 md:grid-cols-2">
             {culture.map((item) => (
               <Reveal
                 key={item.title}
-                className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
+                className="card-lift rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm"
               >
                 <h2 className="text-lg font-semibold">{item.title}</h2>
                 <p className="mt-3 text-sm text-[var(--ink-muted)]">
@@ -183,11 +183,11 @@ export default function RecruitPage() {
 
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
           <h2 className="text-xl font-semibold">選考の流れ</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-4">
+          <div className="stagger mt-6 grid gap-4 md:grid-cols-4">
             {flow.map((step, index) => (
               <div
                 key={step.title}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
               >
                 <p className="text-xs font-semibold text-[var(--brand)]">
                   STEP {index + 1}
@@ -203,14 +203,14 @@ export default function RecruitPage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-2">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">よくある質問</h2>
             <div className="mt-6 space-y-4 text-sm text-[var(--ink-muted)]">
               {faq.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
                 >
                   <p className="text-sm font-semibold text-[var(--ink)]">
                     {item.title}

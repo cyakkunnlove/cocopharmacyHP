@@ -158,7 +158,7 @@ export default function CoCoKartePage() {
               </a>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
+          <div className="img-zoom relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
               src="/legacy/it-dashboard.jpg"
               alt="CoCoKarteの画面イメージ"
@@ -169,14 +169,14 @@ export default function CoCoKartePage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="stagger mt-10 grid gap-6 lg:grid-cols-2">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">こんな課題を解決します</h2>
             <div className="mt-6 grid gap-4">
               {challenges.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
                 >
                   <p className="text-sm font-semibold text-[var(--ink)]">
                     {item.title}
@@ -194,7 +194,7 @@ export default function CoCoKartePage() {
               {strengths.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
                 >
                   <p className="text-sm font-semibold text-[var(--ink)]">
                     {item.title}
@@ -212,7 +212,7 @@ export default function CoCoKartePage() {
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">機能一覧</h2>
             <div className="mt-6 grid gap-4">
-              <div className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4">
+              <div className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4">
                 <p className="text-xs font-semibold text-[var(--brand)]">
                   標準対応
                 </p>
@@ -265,7 +265,7 @@ export default function CoCoKartePage() {
               <p className="text-xs uppercase tracking-[0.24em] text-[var(--brand)]">
                 基本プラン
               </p>
-              <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <div className="stagger mt-4 grid gap-4 md:grid-cols-2">
                 <div>
                   <p className="text-sm font-semibold text-[var(--ink)]">
                     初期導入費：個別見積もり
@@ -294,11 +294,11 @@ export default function CoCoKartePage() {
 
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
           <h2 className="text-xl font-semibold">導入の流れ</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-4">
+          <div className="stagger mt-6 grid gap-4 md:grid-cols-4">
             {steps.map((step, index) => (
               <div
                 key={step.title}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
               >
                 <p className="text-xs font-semibold text-[var(--brand)]">
                   STEP {index + 1}
@@ -325,7 +325,7 @@ export default function CoCoKartePage() {
             ))}
           </ul>
           <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4 sm:flex-row sm:items-center">
-            <div className="relative h-12 w-40 overflow-hidden">
+            <div className="img-zoom relative h-12 w-40 overflow-hidden">
               <Image
                 src="/security-action-one-star.png"
                 alt="SECURITY ACTION 一つ星"

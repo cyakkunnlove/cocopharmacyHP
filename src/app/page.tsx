@@ -178,7 +178,7 @@ export default function Home() {
                   className="pointer-events-none absolute -right-4 -top-4 h-full w-full rounded-[2rem] border border-[rgba(199,168,118,0.5)]"
                   aria-hidden
                 />
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_40px_80px_rgba(11,33,66,0.25)]">
+                <div className="img-zoom relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_40px_80px_rgba(11,33,66,0.25)]">
                   <Image
                     src="/legacy/patient.jpg"
                     alt="在宅訪問で患者さまと話す薬剤師"
@@ -234,7 +234,7 @@ export default function Home() {
               {focusAreas.map((area) => (
                 <div
                   key={area.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4"
                 >
                   <p className="font-semibold text-[var(--ink)]">{area.title}</p>
                   <p className="mt-2 text-xs">{area.detail}</p>
@@ -245,7 +245,7 @@ export default function Home() {
         </section>
 
         <section className="mx-auto max-w-6xl px-6 pb-4">
-          <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm md:grid-cols-3">
+          <Reveal className="stagger grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm md:grid-cols-3">
             {[
               {
                 title: "連携領域",
@@ -260,7 +260,7 @@ export default function Home() {
                 detail: "在宅医療 / 調剤 / 医療IT / DX / AI連携 / プロダクト",
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-2xl bg-[var(--mist)] p-5">
+              <div key={item.title} className="card-lift rounded-2xl bg-[var(--mist)] p-5">
                 <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand)]">
                   {item.title}
                 </p>
@@ -338,7 +338,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid gap-4 text-sm text-[var(--ink-muted)]">
-              <div className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4">
+              <div className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4">
                 <p className="text-xs uppercase tracking-[0.2em] text-[var(--ink-muted)]">
                   Office
                 </p>
@@ -349,7 +349,7 @@ export default function Home() {
                   〒260-0044 千葉県千葉市中央区松波1-18-13 ロッキー松波B102
                 </p>
               </div>
-              <div className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4">
+              <div className="card-lift rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-4">
                 <p className="text-xs uppercase tracking-[0.2em] text-[var(--ink-muted)]">
                   Access
                 </p>

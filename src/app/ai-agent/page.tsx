@@ -359,11 +359,11 @@ export default function AIAgentPage() {
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
               ChatGPTとは違います。御社の業務を覚え、自分で考えて動く「もう1人の社員」を、事業所の中に。
             </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="stagger mt-6 grid gap-3 sm:grid-cols-2">
               {highlights.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-4"
                 >
                   <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--brand)]">
                     {item.title}
@@ -400,11 +400,11 @@ export default function AIAgentPage() {
           <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
             こんなお悩みはありませんか？
           </h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div className="stagger mt-8 grid gap-6 sm:grid-cols-2">
             {painPoints.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-6"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-6"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(27,141,138,0.12)] text-[var(--brand)]">
                   <item.icon className="h-6 w-6" />
@@ -432,7 +432,7 @@ export default function AIAgentPage() {
                 ChatGPTは「聞けば答える辞書」。AIエージェントは「自分で働く社員」です。
               </p>
             </div>
-            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
+            <div className="img-zoom relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
               <Image
                 src="/legacy/homecare-robot.jpg"
                 alt="AIテクノロジーのイメージ"
@@ -442,11 +442,11 @@ export default function AIAgentPage() {
               />
             </div>
           </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="stagger mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((f) => (
               <div
                 key={f.title}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(27,141,138,0.12)] text-[var(--brand)]">
                   <f.icon className="h-6 w-6" />
@@ -513,7 +513,7 @@ export default function AIAgentPage() {
                 医療・介護から中小企業まで、業種を問わず導入いただけます。
               </p>
             </div>
-            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
+            <div className="img-zoom relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
               <Image
                 src="/legacy/homecare-consult.jpg"
                 alt="導入相談のイメージ"
@@ -523,11 +523,11 @@ export default function AIAgentPage() {
               />
             </div>
           </div>
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          <div className="stagger mt-8 grid gap-6 lg:grid-cols-3">
             {useCases.map((uc) => (
               <div
                 key={uc.industry}
-                className="flex flex-col rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-6"
+                className="card-lift flex flex-col rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-6"
               >
                 <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--gold)]">
                   {uc.tag}
@@ -565,11 +565,11 @@ export default function AIAgentPage() {
               料金は「初期構築」と「月額伴走サポート」の2階建てです。任せる業務の範囲がお客様ごとに異なるため、一律の価格表ではなく、無料ヒアリングで業務を伺ったうえで個別にお見積りします。
             </p>
 
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="stagger mt-8 grid gap-4 md:grid-cols-3">
               {pricingFactors.map((factor) => (
                 <div
                   key={factor.title}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
+                  className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
                 >
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(27,141,138,0.12)] text-[var(--brand)]">
                     <factor.icon className="h-6 w-6" />
@@ -593,7 +593,7 @@ export default function AIAgentPage() {
               </p>
             </div>
 
-            <div className="mt-6 grid gap-6 lg:grid-cols-3">
+            <div className="stagger mt-6 grid gap-6 lg:grid-cols-3">
               {plans.map((plan) => (
                 <div
                   key={plan.name}
@@ -655,11 +655,11 @@ export default function AIAgentPage() {
                   必要な分だけ追加できます
                 </p>
               </div>
-              <div className="mt-5 grid gap-4 md:grid-cols-2">
+              <div className="stagger mt-5 grid gap-4 md:grid-cols-2">
                 {options.map((option) => (
                   <div
                     key={option.name}
-                    className="flex gap-4 rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-5"
+                    className="card-lift flex gap-4 rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-5"
                   >
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(27,141,138,0.12)] text-[var(--brand)]">
                       <option.icon className="h-5 w-5" />
@@ -693,7 +693,7 @@ export default function AIAgentPage() {
                 セキュリティ・データ管理
               </h2>
             </div>
-            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
+            <div className="img-zoom relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
               <Image
                 src="/legacy/it-security.jpg"
                 alt="セキュリティのイメージ"
@@ -703,11 +703,11 @@ export default function AIAgentPage() {
               />
             </div>
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="stagger mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {securityItems.map((s) => (
               <div
                 key={s.title}
-                className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
+                className="card-lift rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
               >
                 <h3 className="text-sm font-semibold text-[var(--ink)]">
                   {s.title}
@@ -731,7 +731,7 @@ export default function AIAgentPage() {
                 導入の流れ
               </h2>
             </div>
-            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
+            <div className="img-zoom relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
               <Image
                 src="/legacy/it-teamwork.jpg"
                 alt="チームワークのイメージ"
@@ -741,11 +741,11 @@ export default function AIAgentPage() {
               />
             </div>
           </div>
-          <div className="mt-8 grid gap-6 lg:grid-cols-4">
+          <div className="stagger mt-8 grid gap-6 lg:grid-cols-4">
             {steps.map((s, i) => (
               <div
                 key={s.title}
-                className="relative rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
+                className="card-lift relative rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
               >
                 <p className="text-xs font-semibold text-[var(--brand)]">
                   STEP {i + 1}
@@ -760,7 +760,7 @@ export default function AIAgentPage() {
                   </span>
                 )}
                 {i < steps.length - 1 && (
-                  <span className="pointer-events-none absolute right-[-14px] top-1/2 hidden h-[2px] w-7 -translate-y-1/2 bg-[rgba(11,33,66,0.2)] lg:block" />
+                  <span className="step-connector pointer-events-none absolute right-[-14px] top-1/2 -mt-px hidden h-[2px] w-7 bg-[rgba(11,33,66,0.2)] lg:block" />
                 )}
               </div>
             ))}
@@ -779,11 +779,16 @@ export default function AIAgentPage() {
             {faqs.map((faq) => (
               <details
                 key={faq.q}
-                className="group rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)]"
+                className="faq-item group rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] transition hover:border-[rgba(27,141,138,0.3)]"
               >
-                <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-[var(--ink)] [&::-webkit-details-marker]:hidden">
-                  <span className="mr-2 text-[var(--brand)]">Q.</span>
-                  {faq.q}
+                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 text-sm font-semibold text-[var(--ink)] [&::-webkit-details-marker]:hidden">
+                  <span>
+                    <span className="mr-2 text-[var(--brand)]">Q.</span>
+                    {faq.q}
+                  </span>
+                  <span className="faq-marker shrink-0 text-lg font-normal text-[var(--brand)]">
+                    ＋
+                  </span>
                 </summary>
                 <div className="border-t border-[rgba(11,33,66,0.06)] px-6 py-4">
                   <p className="text-sm text-[var(--ink-muted)]">
