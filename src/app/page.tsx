@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import ParallaxController from "@/components/ParallaxController";
+import WaterBackground from "@/components/WaterBackground";
 import { newsItems } from "@/data/news";
 
 const demoUrl =
@@ -91,10 +92,9 @@ export default function Home() {
       <main>
         <section className="relative overflow-hidden bg-[linear-gradient(120deg,#ffffff_0%,#f5f1ea_45%,#e8f2f1_100%)]">
           <div className="absolute inset-0">
-            <div className="hero-film" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(27,141,138,0.08),transparent_55%),radial-gradient(ellipse_at_15%_85%,rgba(199,168,118,0.12),transparent_50%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(27,141,138,0.06),transparent_55%),radial-gradient(ellipse_at_15%_85%,rgba(199,168,118,0.08),transparent_50%)]" />
+            <WaterBackground />
           </div>
-          <div className="hero-sheen" />
           <div
             className="parallax-layer absolute -right-24 top-12 h-72 w-72 rounded-full bg-[rgba(27,141,138,0.18)] blur-3xl"
             style={parallaxSlow}
