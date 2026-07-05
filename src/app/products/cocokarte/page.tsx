@@ -114,7 +114,7 @@ export default function CoCoKartePage() {
       <Header />
 
       <main className="mx-auto max-w-6xl px-6 py-16">
-        <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)] lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+        <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
               Product
@@ -160,7 +160,7 @@ export default function CoCoKartePage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
-              src="/legacy/it-dashboard.png"
+              src="/legacy/it-dashboard.jpg"
               alt="CoCoKarteの画面イメージ"
               fill
               className="object-cover"
@@ -208,7 +208,7 @@ export default function CoCoKartePage() {
           </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">機能一覧</h2>
             <div className="mt-6 grid gap-4">

@@ -158,7 +158,7 @@ export default function ItPage() {
       <Header />
 
       <main className="mx-auto max-w-6xl px-6 py-16">
-        <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)] lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+        <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
               Medical IT
@@ -184,7 +184,7 @@ export default function ItPage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
-              src="/legacy/it-hero.png"
+              src="/legacy/it-hero.jpg"
               alt="医療IT支援のイメージ"
               fill
               className="object-cover"
@@ -193,7 +193,7 @@ export default function ItPage() {
           </div>
         </Reveal>
 
-        <Reveal className="mt-10 grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+        <Reveal className="mt-10 grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
               Product
@@ -214,7 +214,7 @@ export default function ItPage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
-              src="/legacy/it-dashboard.png"
+              src="/legacy/it-dashboard.jpg"
               alt="CoCoKarteの画面イメージ"
               fill
               className="object-cover"
@@ -223,7 +223,7 @@ export default function ItPage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">支援内容</h2>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -295,7 +295,7 @@ export default function ItPage() {
             <h2 className="text-xl font-semibold">対応領域</h2>
             <div className="mt-4 relative h-40 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
               <Image
-                src="/legacy/it-teamwork.png"
+                src="/legacy/it-teamwork.jpg"
                 alt="多職種連携のイメージ"
                 fill
                 className="object-cover"
@@ -322,7 +322,7 @@ export default function ItPage() {
             <h2 className="text-xl font-semibold">期待できる効果</h2>
             <div className="mt-4 relative h-40 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
               <Image
-                src="/legacy/it-dashboard.png"
+                src="/legacy/it-dashboard.jpg"
                 alt="医療ITの成果イメージ"
                 fill
                 className="object-cover"
@@ -383,7 +383,7 @@ export default function ItPage() {
             <h2 className="text-xl font-semibold">守秘義務・情報管理</h2>
             <div className="mt-4 relative h-40 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
               <Image
-                src="/legacy/it-security.png"
+                src="/legacy/it-security.jpg"
                 alt="情報管理のイメージ"
                 fill
                 className="object-cover"

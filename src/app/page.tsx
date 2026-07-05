@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import ParallaxController from "@/components/ParallaxController";
+import { newsItems } from "@/data/news";
 
 const demoUrl =
   process.env.NEXT_PUBLIC_COCOKARTE_DEMO_URL ??
@@ -46,11 +47,7 @@ const focusAreas = [
   },
 ];
 
-const newsItems = [
-  { date: "2024/8/1", title: "ホームページ公開" },
-  { date: "2024/8/1", title: "採用情報公開" },
-  { date: "2024/8/1", title: "店舗情報公開" },
-];
+const latestNews = newsItems.slice(0, 3);
 
 export default function Home() {
   const parallaxSlow = { "--parallax": "0.04" } as CSSProperties;
@@ -101,7 +98,7 @@ export default function Home() {
               muted
               loop
               playsInline
-              poster="/legacy/patient.png"
+              poster="/legacy/patient.jpg"
             >
               <source src="/legacy/hero-video.mp4" type="video/mp4" />
             </video>
@@ -122,14 +119,14 @@ export default function Home() {
             style={parallaxFast}
           >
             <Image
-              src="/legacy/patienthand-2-v2.png"
+              src="/legacy/patienthand-2-v2.jpg"
               alt="在宅医療のイメージ"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 224px"
             />
           </div>
-          <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+          <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="relative z-10">
               <Reveal>
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--brand)]">
@@ -182,7 +179,7 @@ export default function Home() {
             <div className="relative z-10 grid gap-6 sm:grid-cols-2">
               <Reveal className="relative h-60 overflow-hidden rounded-3xl shadow-2xl sm:h-72">
                 <Image
-                  src="/legacy/patient.png"
+                  src="/legacy/patient.jpg"
                   alt="薬局のイメージ"
                   fill
                   className="object-cover"
@@ -192,7 +189,7 @@ export default function Home() {
               </Reveal>
               <Reveal className="relative h-60 overflow-hidden rounded-3xl shadow-2xl sm:h-72">
                 <Image
-                  src="/legacy/injection.png"
+                  src="/legacy/injection.jpg"
                   alt="医療支援のイメージ"
                   fill
                   className="object-cover"
@@ -201,7 +198,7 @@ export default function Home() {
               </Reveal>
               <Reveal className="relative h-48 overflow-hidden rounded-3xl shadow-2xl sm:col-span-2">
                 <Image
-                  src="/legacy/deliverycar.png"
+                  src="/legacy/deliverycar.jpg"
                   alt="在宅訪問のイメージ"
                   fill
                   className="object-cover"
@@ -213,7 +210,7 @@ export default function Home() {
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-16">
-          <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.1)] bg-white p-8 shadow-[0_30px_60px_rgba(11,33,66,0.08)] md:grid-cols-[1.1fr,0.9fr] md:items-center">
+          <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.1)] bg-white p-8 shadow-[0_30px_60px_rgba(11,33,66,0.08)] md:grid-cols-[1.1fr_0.9fr] md:items-center">
             <div>
               <p className="text-xs uppercase tracking-[0.26em] text-[var(--gold)]">
                 Corporate Statement
@@ -270,7 +267,7 @@ export default function Home() {
 
         <section className="bg-[var(--mist)] py-16">
           <div className="mx-auto max-w-6xl px-6">
-            <Reveal className="grid gap-6 md:grid-cols-[1fr,0.7fr] md:items-center">
+            <Reveal className="grid gap-6 md:grid-cols-[1fr_0.7fr] md:items-center">
               <div className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
                 <h3 className="text-xl font-semibold">連携・信頼について</h3>
                 <p className="mt-3 text-sm text-[var(--ink-muted)]">
@@ -292,7 +289,7 @@ export default function Home() {
               <div className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
                 <h3 className="text-xl font-semibold">お知らせ</h3>
                 <div className="mt-4 space-y-3 text-sm text-[var(--ink-muted)]">
-                  {newsItems.map((news) => (
+                  {latestNews.map((news) => (
                     <div
                       key={`${news.date}-${news.title}`}
                       className="flex items-center justify-between border-b border-[rgba(11,33,66,0.08)] pb-2"
@@ -314,7 +311,7 @@ export default function Home() {
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-16">
-          <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-[0_20px_50px_rgba(11,33,66,0.08)] md:grid-cols-[0.9fr,1.1fr] md:items-center">
+          <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-[0_20px_50px_rgba(11,33,66,0.08)] md:grid-cols-[0.9fr_1.1fr] md:items-center">
             <div>
               <p className="text-xs uppercase tracking-[0.26em] text-[var(--brand)]">
                 Company

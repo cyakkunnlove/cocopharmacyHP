@@ -169,6 +169,53 @@ a {
   }
 }
 
+.chat-msg {
+  opacity: 0;
+  animation: chatIn 0.5s ease both;
+}
+
+@keyframes chatIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.voice-wave i {
+  display: inline-block;
+  width: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  animation: wave 1.1s ease-in-out infinite;
+}
+
+.voice-wave i:nth-child(3n) {
+  height: 12px;
+  animation-delay: 0.1s;
+}
+.voice-wave i:nth-child(3n + 1) {
+  height: 6px;
+  animation-delay: 0.3s;
+}
+.voice-wave i:nth-child(3n + 2) {
+  height: 9px;
+  animation-delay: 0.5s;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.6);
+  }
+  50% {
+    transform: scaleY(1.15);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal.is-visible,
@@ -177,10 +224,16 @@ a {
   .hero-sheen,
   .hero-video,
   .hero-film,
-  .parallax-layer {
+  .parallax-layer,
+  .chat-msg,
+  .voice-wave i {
     animation: none;
     transition: none;
     transform: none;
+  }
+
+  .chat-msg {
+    opacity: 1;
   }
 }
 
@@ -192,6 +245,8 @@ a {
   h5 {
     font-family: var(--font-heading), "Hiragino Mincho ProN", serif;
     color: var(--ink);
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
   }
 }
 

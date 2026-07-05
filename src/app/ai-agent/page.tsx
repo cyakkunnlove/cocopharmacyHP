@@ -1,9 +1,30 @@
 import type { Metadata } from "next";
+import type { ComponentType, SVGProps } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
+import AgentChatDemo from "@/components/AgentChatDemo";
+import {
+  BrainSparkIcon,
+  BuildingsIcon,
+  ClipboardIcon,
+  CoinsIcon,
+  DatabaseIcon,
+  DocumentFlowIcon,
+  GraduationIcon,
+  HomeServerIcon,
+  LockIcon,
+  MonitorOffIcon,
+  NetworkIcon,
+  PlugIcon,
+  SmartphoneChatIcon,
+  UserSearchIcon,
+} from "@/components/icons";
+
+type Icon = ComponentType<SVGProps<SVGSVGElement>>;
 
 export const metadata: Metadata = {
   title: "AIエージェント導入",
@@ -14,58 +35,58 @@ export const metadata: Metadata = {
 const highlights = [
   { title: "操作", detail: "スマホに話しかけるだけ" },
   { title: "データ", detail: "事業所内のMac miniに保管" },
-  { title: "初期費用", detail: "個別見積もり" },
-  { title: "月額", detail: "個別見積もり" },
+  { title: "導入期間", detail: "最短2〜4週間" },
+  { title: "料金", detail: "業務範囲に応じて個別設計" },
 ];
 
-const painPoints = [
+const painPoints: { icon: Icon; title: string; detail: string }[] = [
   {
-    icon: "📋",
+    icon: ClipboardIcon,
     title: "事務作業に追われている",
     detail:
       "記録・報告書・請求書…本来の業務以外に毎日何時間も費やしていませんか？",
   },
   {
-    icon: "🧑‍💼",
+    icon: UserSearchIcon,
     title: "人を雇いたいが採用できない",
     detail:
       "求人を出しても応募が来ない。人件費も年々上がる。でも業務は増える一方。",
   },
   {
-    icon: "💻",
+    icon: MonitorOffIcon,
     title: "ITツールを入れたが定着しない",
     detail:
       "操作が複雑で現場が使わない。結局、紙とExcelに戻ってしまう。",
   },
   {
-    icon: "🔒",
+    icon: LockIcon,
     title: "データを外部に預けたくない",
     detail:
       "患者情報・顧客情報を外部サーバーに置くリスクが気になる。",
   },
 ];
 
-const features = [
+const features: { icon: Icon; title: string; detail: string }[] = [
   {
-    icon: "📱",
+    icon: SmartphoneChatIcon,
     title: "スマホで話すだけ",
     detail:
       "専用アプリ不要。Telegram/LINEで話しかけるだけ。Excel/PDFを送れば即集計・分析。ITスキルは一切不要。",
   },
   {
-    icon: "🧠",
+    icon: BrainSparkIcon,
     title: "業務を覚えて自ら動く",
     detail:
       "御社のルール・業務フローを学習し、使うほど御社に最適化。定期レポートや期限管理も自動で実行します。",
   },
   {
-    icon: "🏠",
+    icon: HomeServerIcon,
     title: "データは事業所内のみ",
     detail:
       "Mac mini 1台を事業所に設置。データは外に出ません。医療情報ガイドライン準拠。",
   },
   {
-    icon: "🔄",
+    icon: NetworkIcon,
     title: "多拠点・人数無制限",
     detail:
       "1台で複数拠点に対応。人数無制限で全スタッフが利用可能。既存システムはそのまま併用OK。",
@@ -141,10 +162,27 @@ const useCases = [
   },
 ];
 
+const pricingFactors: { icon: Icon; title: string; detail: string }[] = [
+  {
+    icon: DocumentFlowIcon,
+    title: "業務範囲",
+    detail: "AIに任せる業務の数と複雑さ。まず1業務から小さく始められます。",
+  },
+  {
+    icon: PlugIcon,
+    title: "連携・データ量",
+    detail: "既存システムとの連携数や、移行するデータの量・形式。",
+  },
+  {
+    icon: GraduationIcon,
+    title: "現地対応",
+    detail: "現地研修・運用定着支援・複数拠点セットアップの有無。",
+  },
+];
+
 const plans = [
   {
     name: "ライト",
-    price: "個別見積もり",
     description: "小さく始める基本運用",
     features: [
       "基本AIエージェント1系統",
@@ -156,7 +194,6 @@ const plans = [
   },
   {
     name: "スタンダード",
-    price: "個別見積もり",
     description: "改善しながら定着させる標準プラン",
     features: [
       "ライトプランの全機能",
@@ -168,7 +205,6 @@ const plans = [
   },
   {
     name: "プレミアム",
-    price: "個別見積もり",
     description: "複数業務をまとめて任せる伴走プラン",
     features: [
       "スタンダードの全機能",
@@ -180,35 +216,35 @@ const plans = [
   },
 ];
 
-const options = [
+const options: { icon: Icon; name: string; detail: string }[] = [
   {
+    icon: DocumentFlowIcon,
     name: "追加業務フロー構築",
-    price: "個別見積もり",
     detail: "請求、報告書、予約管理など新しい業務をAIに追加する場合",
   },
   {
+    icon: DatabaseIcon,
     name: "既存データ移行・整備",
-    price: "個別見積もり",
     detail: "Excel、CSV、PDF、紙運用からの初期データ整理・登録",
   },
   {
+    icon: PlugIcon,
     name: "外部システム連携",
-    price: "個別見積もり",
     detail: "電子カルテ、会計、予約、LINE、Google Workspace等との連携",
   },
   {
+    icon: GraduationIcon,
     name: "現地研修・運用定着支援",
-    price: "個別見積もり",
     detail: "スタッフ向け説明、初回利用サポート、現場オペレーション整理",
   },
   {
+    icon: BuildingsIcon,
     name: "追加拠点・追加端末設定",
-    price: "個別見積もり",
     detail: "複数店舗・複数拠点で使う場合のネットワーク/端末追加設定",
   },
   {
+    icon: CoinsIcon,
     name: "補助金申請サポート",
-    price: "個別見積もり",
     detail: "申請資料の整理、事業計画のたたき台作成、導入効果の言語化",
   },
 ];
@@ -291,13 +327,28 @@ const faqs = [
 ];
 
 export default function AIAgentPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
     <div className="bg-[var(--sand)]">
       <Header />
+      <Script
+        id="jsonld-ai-agent-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
 
       <main className="mx-auto max-w-6xl px-6 py-16">
         {/* Hero */}
-        <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)] lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+        <Reveal className="grid gap-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
               AI Agent Service
@@ -305,7 +356,7 @@ export default function AIAgentPage() {
             <h1 className="mt-3 text-3xl font-semibold md:text-4xl">
               AIエージェント導入支援
             </h1>
-            <p className="mt-4 max-w-2xl text-sm text-[var(--ink-muted)]">
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
               ChatGPTとは違います。御社の業務を覚え、自分で考えて動く「もう1人の社員」を、事業所の中に。
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -323,16 +374,22 @@ export default function AIAgentPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="pulse-ring rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[rgba(27,141,138,0.25)] transition hover:bg-[var(--brand-dark)]"
+              >
+                無料ヒアリングを申し込む
+              </Link>
+              <a
+                href="#pricing"
+                className="rounded-full border border-[rgba(11,33,66,0.2)] bg-white px-6 py-3 text-sm font-semibold text-[var(--brand)] transition hover:border-[var(--brand)] hover:text-[var(--brand-dark)]"
+              >
+                料金の考え方を見る
+              </a>
+            </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
-            <Image
-              src="/legacy/it-dashboard.png"
-              alt="AIエージェント管理画面のイメージ"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          <AgentChatDemo />
         </Reveal>
 
         {/* Pain Points */}
@@ -349,8 +406,10 @@ export default function AIAgentPage() {
                 key={item.title}
                 className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-6"
               >
-                <span className="text-2xl">{item.icon}</span>
-                <h3 className="mt-3 text-base font-semibold">{item.title}</h3>
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(27,141,138,0.12)] text-[var(--brand)]">
+                  <item.icon className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 text-base font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm text-[var(--ink-muted)]">
                   {item.detail}
                 </p>
@@ -361,7 +420,7 @@ export default function AIAgentPage() {
 
         {/* Features */}
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-sm">
-          <div className="grid gap-8 lg:grid-cols-[1fr,0.6fr] lg:items-start">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.6fr] lg:items-start">
             <div>
               <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
                 Features
@@ -375,7 +434,7 @@ export default function AIAgentPage() {
             </div>
             <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
               <Image
-                src="/legacy/homecare-robot.png"
+                src="/legacy/homecare-robot.jpg"
                 alt="AIテクノロジーのイメージ"
                 fill
                 className="object-cover"
@@ -389,8 +448,10 @@ export default function AIAgentPage() {
                 key={f.title}
                 className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
               >
-                <span className="text-2xl">{f.icon}</span>
-                <h3 className="mt-3 text-base font-semibold">{f.title}</h3>
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(27,141,138,0.12)] text-[var(--brand)]">
+                  <f.icon className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 text-base font-semibold">{f.title}</h3>
                 <p className="mt-2 text-sm text-[var(--ink-muted)]">
                   {f.detail}
                 </p>
@@ -440,7 +501,7 @@ export default function AIAgentPage() {
 
         {/* Use Cases */}
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-sm">
-          <div className="grid gap-8 lg:grid-cols-[1fr,0.5fr] lg:items-start">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.5fr] lg:items-start">
             <div>
               <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
                 Use Cases
@@ -454,7 +515,7 @@ export default function AIAgentPage() {
             </div>
             <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
               <Image
-                src="/legacy/homecare-consult.png"
+                src="/legacy/homecare-consult.jpg"
                 alt="導入相談のイメージ"
                 fill
                 className="object-cover"
@@ -491,121 +552,139 @@ export default function AIAgentPage() {
           </div>
         </Reveal>
 
-        {/* Plans */}
-        <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)]">
-          <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
-            Plans
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
-            料金プラン
-          </h2>
-
-          <div className="mt-6 rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-6 text-center">
-            <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand)]">
-              初期費用
+        {/* Pricing */}
+        <Reveal className="mt-10 scroll-mt-24 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)]">
+          <div id="pricing" className="scroll-mt-24">
+            <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
+              Pricing
             </p>
-            <p className="mt-2 text-3xl font-bold text-[var(--ink)]">
-              個別見積もり
+            <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
+              料金の考え方
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[var(--ink-muted)]">
+              料金は「初期構築」と「月額伴走サポート」の2階建てです。任せる業務の範囲がお客様ごとに異なるため、一律の価格表ではなく、無料ヒアリングで業務を伺ったうえで個別にお見積りします。
             </p>
-            <p className="mt-2 text-xs text-[var(--ink-muted)]">
-              デバイス本体・セットアップ・業務ヒアリング・初期設計・初期研修・基本データ登録を含みます
-            </p>
-          </div>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
-            {plans.map((plan) => (
-              <div
-                key={plan.name}
-                className={`relative flex flex-col rounded-2xl border p-6 ${
-                  plan.recommended
-                    ? "border-[var(--brand)] ring-2 ring-[var(--brand)]/20"
-                    : "border-[rgba(11,33,66,0.12)]"
-                } bg-[var(--mist)]`}
-              >
-                {plan.recommended && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--brand)] px-4 py-1 text-xs font-semibold text-white">
-                    おすすめ
-                  </span>
-                )}
-                <p className="text-xs font-semibold text-[var(--brand)]">
-                  {plan.name}プラン
-                </p>
-                <p className="mt-2 text-2xl font-bold text-[var(--ink)]">
-                  {plan.price}
-                </p>
-                <p className="mt-1 text-xs text-[var(--ink-muted)]">
-                  {plan.description}
-                </p>
-                <ul className="mt-5 flex-1 space-y-2">
-                  {plan.features.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-start gap-2 text-sm text-[var(--ink-muted)]"
-                    >
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/contact"
-                  className={`mt-6 block rounded-full py-3 text-center text-sm font-semibold transition ${
-                    plan.recommended
-                      ? "bg-[var(--brand)] text-white hover:bg-[var(--brand-dark)]"
-                      : "border border-[var(--brand)] text-[var(--brand)] hover:bg-[var(--brand)] hover:text-white"
-                  }`}
-                >
-                  お問い合わせ
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-6 text-center text-xs text-[var(--ink-muted)]">
-            ※ 業務範囲、連携先、データ量、現地対応の有無により費用が変わるため、要件確認後に個別にお見積りします。
-          </p>
-
-          <div className="mt-8 rounded-2xl border border-[rgba(11,33,66,0.12)] bg-white p-6">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand)]">
-                  Options
-                </p>
-                <h3 className="mt-2 text-xl font-semibold">主なオプション</h3>
-              </div>
-              <p className="text-xs text-[var(--ink-muted)]">
-                必要な分だけ追加できます
-              </p>
-            </div>
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              {options.map((option) => (
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {pricingFactors.map((factor) => (
                 <div
-                  key={option.name}
-                  className="rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-5"
+                  key={factor.title}
+                  className="rounded-2xl border border-[rgba(11,33,66,0.12)] bg-[var(--mist)] p-5"
                 >
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <h4 className="text-sm font-semibold text-[var(--ink)]">
-                      {option.name}
-                    </h4>
-                    <p className="text-sm font-bold text-[var(--brand)]">
-                      {option.price}
-                    </p>
-                  </div>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(27,141,138,0.12)] text-[var(--brand)]">
+                    <factor.icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="mt-4 text-sm font-semibold text-[var(--ink)]">
+                    お見積りの要素：{factor.title}
+                  </h3>
                   <p className="mt-2 text-sm text-[var(--ink-muted)]">
-                    {option.detail}
+                    {factor.detail}
                   </p>
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-xs text-[var(--ink-muted)]">
-              補助金・助成金の活用は、対象要件を確認したうえで申請方針をご提案します。採択や補助額を保証するものではありません。
+
+            <div className="mt-10">
+              <h3 className="text-xl font-semibold">
+                月額伴走サポートのプラン構成
+              </h3>
+              <p className="mt-2 text-sm text-[var(--ink-muted)]">
+                導入後の改善サイクルの深さで3段階からお選びいただけます。
+              </p>
+            </div>
+
+            <div className="mt-6 grid gap-6 lg:grid-cols-3">
+              {plans.map((plan) => (
+                <div
+                  key={plan.name}
+                  className={`relative flex flex-col rounded-2xl border p-6 ${
+                    plan.recommended
+                      ? "border-[var(--brand)] ring-2 ring-[var(--brand)]/20"
+                      : "border-[rgba(11,33,66,0.12)]"
+                  } bg-[var(--mist)]`}
+                >
+                  {plan.recommended && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--brand)] px-4 py-1 text-xs font-semibold text-white">
+                      おすすめ
+                    </span>
+                  )}
+                  <p className="text-xs font-semibold text-[var(--brand)]">
+                    {plan.name}プラン
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-[var(--ink)]">
+                    {plan.description}
+                  </p>
+                  <ul className="mt-5 flex-1 space-y-2">
+                    {plan.features.map((f) => (
+                      <li
+                        key={f}
+                        className="flex items-start gap-2 text-sm text-[var(--ink-muted)]"
+                      >
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className={`mt-6 block rounded-full py-3 text-center text-sm font-semibold transition ${
+                      plan.recommended
+                        ? "bg-[var(--brand)] text-white hover:bg-[var(--brand-dark)]"
+                        : "border border-[var(--brand)] text-[var(--brand)] hover:bg-[var(--brand)] hover:text-white"
+                    }`}
+                  >
+                    見積もりを依頼する
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-6 text-center text-xs text-[var(--ink-muted)]">
+              ※ 初期構築費用には、デバイス本体・セットアップ・業務ヒアリング・初期設計・初期研修・基本データ登録を含みます。
             </p>
+
+            <div className="mt-8 rounded-2xl border border-[rgba(11,33,66,0.12)] bg-white p-6">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand)]">
+                    Options
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold">主なオプション</h3>
+                </div>
+                <p className="text-xs text-[var(--ink-muted)]">
+                  必要な分だけ追加できます
+                </p>
+              </div>
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
+                {options.map((option) => (
+                  <div
+                    key={option.name}
+                    className="flex gap-4 rounded-2xl border border-[rgba(11,33,66,0.08)] bg-[var(--mist)] p-5"
+                  >
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(27,141,138,0.12)] text-[var(--brand)]">
+                      <option.icon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <h4 className="text-sm font-semibold text-[var(--ink)]">
+                        {option.name}
+                      </h4>
+                      <p className="mt-1 text-sm text-[var(--ink-muted)]">
+                        {option.detail}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-xs text-[var(--ink-muted)]">
+                補助金・助成金の活用は、対象要件を確認したうえで申請方針をご提案します。採択や補助額を保証するものではありません。
+              </p>
+            </div>
           </div>
         </Reveal>
 
         {/* Security */}
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-sm">
-          <div className="grid gap-8 lg:grid-cols-[1fr,0.5fr] lg:items-start">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.5fr] lg:items-start">
             <div>
               <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
                 Security
@@ -616,7 +695,7 @@ export default function AIAgentPage() {
             </div>
             <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
               <Image
-                src="/legacy/it-security.png"
+                src="/legacy/it-security.jpg"
                 alt="セキュリティのイメージ"
                 fill
                 className="object-cover"
@@ -643,7 +722,7 @@ export default function AIAgentPage() {
 
         {/* Steps */}
         <Reveal className="mt-10 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)]">
-          <div className="grid gap-8 lg:grid-cols-[1fr,0.5fr] lg:items-start">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.5fr] lg:items-start">
             <div>
               <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
                 Flow
@@ -654,7 +733,7 @@ export default function AIAgentPage() {
             </div>
             <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)] lg:block">
               <Image
-                src="/legacy/it-teamwork.png"
+                src="/legacy/it-teamwork.jpg"
                 alt="チームワークのイメージ"
                 fill
                 className="object-cover"
@@ -726,7 +805,7 @@ export default function AIAgentPage() {
               <p className="text-xs uppercase tracking-[0.28em] text-[rgba(255,255,255,0.7)]">
                 Contact
               </p>
-              <h2 className="mt-2 text-2xl font-semibold">
+              <h2 className="mt-2 text-2xl font-semibold text-white">
                 まずは無料ヒアリングから
               </h2>
               <p className="mt-2 text-sm text-[rgba(255,255,255,0.75)]">

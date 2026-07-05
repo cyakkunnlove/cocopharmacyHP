@@ -3,42 +3,12 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
+import { newsItems } from "@/data/news";
 
 export const metadata: Metadata = {
   title: "お知らせ",
   description: "株式会社メディカル東京からのお知らせ一覧です。",
 };
-
-const newsItems = [
-  {
-    date: "2024/8/1",
-    title: "ホームページ公開",
-    detail: "コーポレートサイトを公開しました。",
-    category: "お知らせ",
-    image: "/legacy/news-hero.png",
-  },
-  {
-    date: "2024/8/1",
-    title: "採用情報公開",
-    detail: "採用情報の掲載を開始しました。",
-    category: "採用",
-    image: "/legacy/news-recruit.png",
-  },
-  {
-    date: "2024/8/1",
-    title: "店舗情報公開",
-    detail: "ココ薬局 千葉中央店の情報を掲載しました。",
-    category: "在宅医療",
-    image: "/legacy/news-homecare.png",
-  },
-  {
-    date: "準備中",
-    title: "医療IT支援の取り組み",
-    detail: "医療IT支援の実績は順次公開予定です。",
-    category: "医療IT",
-    image: "/legacy/news-it.png",
-  },
-];
 
 const categories = ["お知らせ", "採用", "医療IT", "在宅医療"];
 
@@ -70,7 +40,7 @@ export default function NewsPage() {
             >
               <div className="relative h-40 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
                 <Image
-                  src={news.image}
+                  src={news.image ?? "/legacy/news-hero.jpg"}
                   alt={news.title}
                   fill
                   className="object-cover"

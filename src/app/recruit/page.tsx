@@ -83,7 +83,7 @@ export default function RecruitPage() {
       <Header />
 
       <main className="mx-auto max-w-6xl px-6 py-16">
-        <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)] lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+        <Reveal className="grid gap-6 rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-10 shadow-[0_30px_60px_rgba(11,33,66,0.08)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--brand)]">
               Recruit
@@ -108,7 +108,7 @@ export default function RecruitPage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[rgba(11,33,66,0.12)]">
             <Image
-              src="/legacy/recruit-hero.png"
+              src="/legacy/recruit-hero.jpg"
               alt="採用情報のイメージ"
               fill
               className="object-cover"
@@ -117,7 +117,7 @@ export default function RecruitPage() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-8 shadow-sm">
             <h2 className="text-xl font-semibold">募集職種</h2>
             <ul className="mt-6 space-y-3 text-sm text-[var(--ink-muted)]">
@@ -150,12 +150,12 @@ export default function RecruitPage() {
           </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="rounded-3xl border border-[rgba(11,33,66,0.12)] bg-white p-6 shadow-sm">
             <h2 className="text-lg font-semibold">職場の雰囲気</h2>
             <div className="mt-4 relative h-48 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
               <Image
-                src="/legacy/recruit-culture.png"
+                src="/legacy/recruit-culture.jpg"
                 alt="職場の雰囲気"
                 fill
                 className="object-cover"
@@ -224,7 +224,7 @@ export default function RecruitPage() {
             <h2 className="text-xl font-semibold">医療ITに関わる機会</h2>
             <div className="mt-4 relative h-40 overflow-hidden rounded-2xl border border-[rgba(11,33,66,0.08)]">
               <Image
-                src="/legacy/recruit-it.png"
+                src="/legacy/recruit-it.jpg"
                 alt="医療ITに関わる機会"
                 fill
                 className="object-cover"
