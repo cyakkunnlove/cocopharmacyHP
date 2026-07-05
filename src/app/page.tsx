@@ -52,7 +52,6 @@ const latestNews = newsItems.slice(0, 3);
 export default function Home() {
   const parallaxSlow = { "--parallax": "0.04" } as CSSProperties;
   const parallaxMid = { "--parallax": "0.08" } as CSSProperties;
-  const parallaxFast = { "--parallax": "0.12" } as CSSProperties;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -103,7 +102,7 @@ export default function Home() {
               <source src="/legacy/hero-video.mp4" type="video/mp4" />
             </video>
             <div className="hero-film" />
-            <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(247,244,239,0.92),rgba(247,244,239,0.75))]" />
+            <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(247,244,239,0.97)_0%,rgba(247,244,239,0.92)_55%,rgba(247,244,239,0.82)_100%)]" />
           </div>
           <div className="hero-sheen" />
           <div
@@ -114,18 +113,6 @@ export default function Home() {
             className="parallax-layer absolute -left-24 bottom-10 h-60 w-60 rounded-full bg-[rgba(199,168,118,0.22)] blur-3xl"
             style={parallaxMid}
           />
-          <div
-            className="parallax-layer absolute right-10 top-24 hidden h-56 w-56 overflow-hidden rounded-3xl border border-white/40 shadow-xl lg:block"
-            style={parallaxFast}
-          >
-            <Image
-              src="/legacy/patienthand-2-v2.jpg"
-              alt="在宅医療のイメージ"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 224px"
-            />
-          </div>
           <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="relative z-10">
               <Reveal>
@@ -176,34 +163,41 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="relative z-10 grid gap-6 sm:grid-cols-2">
-              <Reveal className="relative h-60 overflow-hidden rounded-3xl shadow-2xl sm:h-72">
-                <Image
-                  src="/legacy/patient.jpg"
-                  alt="薬局のイメージ"
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </Reveal>
-              <Reveal className="relative h-60 overflow-hidden rounded-3xl shadow-2xl sm:h-72">
-                <Image
-                  src="/legacy/injection.jpg"
-                  alt="医療支援のイメージ"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </Reveal>
-              <Reveal className="relative h-48 overflow-hidden rounded-3xl shadow-2xl sm:col-span-2">
-                <Image
-                  src="/legacy/deliverycar.jpg"
-                  alt="在宅訪問のイメージ"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 100vw"
-                />
+            <div className="relative z-10 mx-auto w-full max-w-[520px] pb-12 pl-4 sm:pl-10 lg:max-w-none">
+              <Reveal className="relative">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-[0_40px_80px_rgba(11,33,66,0.22)]">
+                  <Image
+                    src="/legacy/patient.jpg"
+                    alt="在宅訪問で患者さまと話す薬剤師"
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(200deg,transparent_60%,rgba(11,33,66,0.18))]" />
+                </div>
+                <div className="absolute -bottom-10 -left-4 w-40 overflow-hidden rounded-2xl border-4 border-white shadow-xl sm:-left-10 sm:w-52">
+                  <div className="relative aspect-square">
+                    <Image
+                      src="/legacy/patienthand-2-v2.jpg"
+                      alt="一包化されたお薬カレンダー"
+                      fill
+                      className="object-cover"
+                      sizes="208px"
+                    />
+                  </div>
+                </div>
+                <div className="absolute -top-5 right-5 rounded-2xl border border-[rgba(11,33,66,0.1)] bg-white/95 px-5 py-3 shadow-lg backdrop-blur">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--brand)]">
+                    Home Care
+                  </p>
+                  <p className="mt-1 text-sm font-semibold text-[var(--ink)]">
+                    在宅対応 千葉県内全域
+                  </p>
+                  <p className="mt-0.5 text-[11px] text-[var(--ink-muted)]">
+                    医療機関・施設と連携
+                  </p>
+                </div>
               </Reveal>
             </div>
           </div>
