@@ -169,6 +169,34 @@ a {
   }
 }
 
+.scroll-cue {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 1px;
+  background: rgba(11, 33, 66, 0.2);
+  overflow: hidden;
+}
+
+.scroll-cue::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: var(--brand);
+  animation: cueSlide 2.4s ease-in-out infinite;
+}
+
+@keyframes cueSlide {
+  0% {
+    transform: translateX(-120%);
+  }
+  60%,
+  100% {
+    transform: translateX(280%);
+  }
+}
+
 .chat-msg {
   opacity: 0;
   animation: chatIn 0.5s ease both;
@@ -226,7 +254,8 @@ a {
   .hero-film,
   .parallax-layer,
   .chat-msg,
-  .voice-wave i {
+  .voice-wave i,
+  .scroll-cue::after {
     animation: none;
     transition: none;
     transform: none;
